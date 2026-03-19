@@ -1,0 +1,328 @@
+# Lesson Writing Style Patterns
+# Prose style rules for writing effective lessons
+# Updated by /compound skill
+
+version: 1
+last_updated: "2026-02-27"
+
+# Anti-patterns: things to avoid
+anti_patterns:
+
+  - id: em-dash-flourish
+    pattern: "Sentence that makes a point — followed by em-dash explanation restating or elaborating the point"
+    description: "When a statement is already clear, don't append an em-dash explanation that restates what was said"
+    impact: "Makes prose feel AI-generated, adds unnecessary words, patronizes reader"
+    detection: "Look for em-dash followed by explanation of what the preceding clause already communicated"
+    examples:
+      - before: "You can browse courses without connecting a wallet — it's public by design."
+        after: "You can browse courses without connecting a wallet."
+        source: "andamio-for-contributors/lessons/module-2/2.1-navigate-course-catalog.md"
+        issue: "The first clause already communicates that browsing is public/open"
+      - before: "You don't need a wallet connected — exploring is free."
+        after: "You don't need a wallet connected."
+        source: "andamio-for-contributors/lessons/module-2/2.1-navigate-course-catalog.md"
+        issue: "The em-dash clause restates what 'don't need a wallet' already implies"
+    exceptions:
+      - "Definition lists: **Term** — definition (structural, not flourish)"
+      - "Q&A lists: **Question?** — answer (structural, not flourish)"
+      - "Clarifying vague terms: 'fully operational — you can enroll, submit, and earn' (adds concrete meaning)"
+    date_added: "2026-02-27"
+    frequency: 2
+    courses_seen_in:
+      - andamio-for-contributors
+
+  - id: route-path-only
+    pattern: "Navigate to `/route` or go to /path"
+    description: "Use full URLs instead of route paths alone"
+    impact: "Route paths assume context; full URLs are actionable anywhere"
+    detection: "Look for backticked routes like `/course` or `/project` without full domain"
+    examples:
+      - before: "navigate to `/course`"
+        after: "navigate to [app.andamio.io/course](https://app.andamio.io/course)"
+        source: "andamio-for-contributors/lessons/module-2/2.1-navigate-course-catalog.md"
+      - before: "Go to `/course` (the Browse Courses page)"
+        after: "Go to [app.andamio.io/course](https://app.andamio.io/course)"
+        source: "andamio-for-contributors/lessons/module-2/2.1-navigate-course-catalog.md"
+    date_added: "2026-02-27"
+    frequency: 2
+    courses_seen_in:
+      - andamio-for-contributors
+
+  - id: non-decisional-ui-elements
+    pattern: "Documenting UI elements that don't help learners make decisions"
+    description: "If all items share the same property (e.g., all courses are Active), documenting that property adds noise"
+    impact: "Wastes learner attention on information that doesn't differentiate options"
+    detection: "Ask: does knowing this help the learner choose between items? If everything has the same value, no."
+    examples:
+      - before: "Status badge — 'Active' means the course is live and accepting students"
+        after: "(removed)"
+        source: "andamio-for-contributors/lessons/module-2/2.1-navigate-course-catalog.md"
+        context: "All courses in the catalog are already active; the badge doesn't help decide"
+    date_added: "2026-02-27"
+    frequency: 1
+    courses_seen_in:
+      - andamio-for-contributors
+
+  - id: em-dash-dangling-participle
+    pattern: "Main clause — participial phrase"
+    description: "Em-dash followed by a dangling '-ing' phrase; rewrite with 'by' or integrate into sentence"
+    impact: "Awkward construction that feels like an afterthought"
+    detection: "Look for '— [verb]ing' patterns"
+    examples:
+      - before: "you can mint your Access Token — choosing an alias that becomes your permanent on-chain identity"
+        after: "you can mint your Access Token by choosing an alias that becomes your permanent on-chain identity"
+        source: "andamio-for-contributors/lessons/module-1/1.2-connect-wallet.md"
+        issue: "'— choosing' dangles; 'by choosing' integrates it as method"
+    date_added: "2026-02-27"
+    frequency: 1
+    courses_seen_in:
+      - andamio-for-contributors
+
+  - id: over-explain-what-happened
+    pattern: "'What Just Happened' sections that explain technical details after simple actions"
+    description: "For beginner audiences (Contributors), don't add technical play-by-play after each step"
+    impact: "Sounds creepy ('Andamio now knows your wallet address'), patronizes reader, adds bulk"
+    detection: "Sections titled 'What Just Happened' or 'What's Going On' that explain mechanics the learner doesn't need"
+    examples:
+      - before: |
+          ## What Just Happened
+          Connecting your wallet does two things:
+          1. **Identifies you** — Andamio now knows your wallet address
+          2. **Checks for an Access Token** — If you already have one, you're signed in.
+        after: "(removed entirely)"
+        source: "andamio-for-contributors/lessons/module-1/1.2-connect-wallet.md"
+        issue: "Technical explanation not needed; learner just needs to move to next step"
+    note: "This applies to Contributors course (light depth). Course Creators and API Developers may need more explanation."
+    date_added: "2026-02-27"
+    frequency: 1
+    courses_seen_in:
+      - andamio-for-contributors
+
+  - id: think-about-it-subheading
+    pattern: "'Think About It' as a section heading for reflective questions"
+    description: "Never use 'Think About It' as a subheading. Instead, present reflective questions as a plain list without a cutesy label."
+    impact: "Sounds patronizing and formulaic"
+    detection: "Look for '## Think About It' or '### Think About It' headings"
+    examples:
+      - before: |
+          ## Think About It
+          - What would happen if...?
+        after: |
+          Some questions to consider:
+          - What would happen if...?
+        source: "nostr-relay-operations/lessons (user feedback)"
+        issue: "'Think About It' is a directive label; a simple lead-in sentence is better"
+    date_added: "2026-03-01"
+    frequency: 1
+    courses_seen_in:
+      - nostr-relay-operations
+
+  - id: silent-success-no-verification
+    pattern: "A How To Guide step where the command succeeds silently and the lesson provides no way to confirm it worked"
+    description: "CLI commands that produce no output on success leave students believing they failed. Every command that can succeed silently needs a follow-up verification step."
+    impact: "Student assumes the step failed, begins debugging a non-problem, loses confidence"
+    detection: "Look for restart/apply/start commands that don't include a verification step immediately after"
+    examples:
+      - before: |
+          ## Applying Changes
+          After editing `config.toml`, restart the relay:
+          ```bash
+          RUST_LOG=warn,nostr_rs_relay=info ./target/release/nostr-rs-relay
+          ```
+          Watch the startup logs to confirm your settings are applied.
+        after: |
+          ## Applying Changes
+          After editing `config.toml`, restart the relay:
+          ```bash
+          RUST_LOG=warn,nostr_rs_relay=info ./target/release/nostr-rs-relay
+          ```
+          At the default log level, a successful start produces no output. Verify the relay is running:
+          ```bash
+          ss -tlnp | grep 8080
+          ```
+          You should see a line showing the relay listening on port 8080.
+        source: "nostr-relay-operations/lessons/module-3/3.1-configure-settings.md"
+        issue: "Lesson says 'watch the startup logs' but at warn level, successful startup is silent"
+    origin: "student-testing: student changed config, restarted relay, saw no output, assumed it was broken"
+    date_added: "2026-03-02"
+    frequency: 1
+    courses_seen_in:
+      - nostr-relay-operations
+
+  - id: compounding-silence
+    pattern: "Multiple diagnostic commands in a row all produce no output"
+    description: "When a student is stuck and tries multiple commands that all return silence, each silent response reinforces the belief that something is deeply wrong. Diagnostic commands should always produce explicit output."
+    impact: "Escalating confusion — one silent command is puzzling, three in a row causes panic"
+    detection: "Look for troubleshooting sequences where success and failure both produce no output"
+    examples:
+      - before: |
+          Validate your config:
+          ```bash
+          python3 -c "import tomllib; tomllib.load(open('config.toml', 'rb'))"
+          ```
+        after: |
+          Validate your config:
+          ```bash
+          python3 -c "import tomllib; tomllib.load(open('config.toml', 'rb')); print('config.toml is valid')"
+          ```
+        source: "coaching session on nostr-relay-operations/3.1"
+        issue: "Valid TOML produces no output; student interpreted silence as another failure"
+    origin: "student-testing: student ran relay start (silence), debug start (silence), TOML validator (silence) — all were actually succeeding"
+    date_added: "2026-03-02"
+    frequency: 1
+    courses_seen_in:
+      - nostr-relay-operations
+
+  - id: route-path-inconsistency
+    pattern: "Using `/route` in some lessons and full URLs in others"
+    description: "Lesson 2.3 and 4.4 use bare `/project` and `/course` paths instead of full URLs, even though 2.1 correctly uses app.andamio.io/course"
+    impact: "Inconsistency within a single course confuses learners and makes lessons less self-contained"
+    detection: "Look for backticked paths like `/project` or `/course` without domain — compare to other lessons in same course"
+    examples:
+      - before: "navigate to `/project`"
+        after: "navigate to [app.andamio.io/project](https://app.andamio.io/project)"
+        source: "andamio-for-contributors/lessons/module-2/2.3-browse-projects.md"
+      - before: "Go to `/project` (Browse Projects)"
+        after: "Go to [app.andamio.io/project](https://app.andamio.io/project)"
+        source: "andamio-for-contributors/lessons/module-4/4.4-find-new-opportunities.md"
+    note: "This is the same pattern as route-path-only but specifically about inconsistency within a course. 2.1 uses full URLs; 2.3 and 4.4 don't. Fix before promoting."
+    date_added: "2026-02-28"
+    frequency: 3
+    courses_seen_in:
+      - andamio-for-contributors
+
+# Acceptable patterns: things that look similar but are fine
+acceptable_patterns:
+
+  - id: em-dash-definition-list
+    pattern: "**Bold term** — definition or explanation"
+    description: "Em-dash used to introduce what something IS, not to restate"
+    examples:
+      - "**Course image** — Visual identity for the course"
+      - "**Status badge** — 'Active' means the course is live and accepting students"
+    why_acceptable: "The em-dash introduces new information (definition), not redundant explanation"
+
+  - id: em-dash-clarification
+    pattern: "Vague term — concrete specifics"
+    description: "Em-dash used to make an abstract term concrete"
+    examples:
+      - "Active courses are fully operational — you can enroll, submit assignments, and earn credentials."
+    why_acceptable: "'Fully operational' is vague; the em-dash clause adds concrete meaning not implied by the first part"
+
+# Structural patterns: effective lesson structures that emerged
+structural_patterns:
+
+  - id: product-demo-structure
+    description: "Consistent structure for Product Demo lessons"
+    pattern: |
+      1. Brief context/orientation (1-2 paragraphs, no more)
+      2. Screenshot → describe what's visible → tell learner what to click (repeat per step)
+      3. "Try It Now" section — 3-4 concrete actions the learner can take immediately
+      4. "What's Next" — one sentence connecting to the next lesson
+    examples:
+      - "2.1-navigate-course-catalog.md"
+      - "3.1-navigate-lesson-content.md"
+      - "3.2-enroll-submit-assignment.md"
+    notes: "Screenshots drive the pacing. Each section maps to one screenshot or one UI state. Don't describe what the learner can see — describe what matters for their decision."
+    courses_seen_in: ["andamio-for-contributors"]
+    date_added: "2026-02-28"
+
+  - id: exploration-structure
+    description: "Consistent structure for Exploration lessons"
+    pattern: |
+      1. Context — why this matters (1-2 paragraphs)
+      2. Core content — comparisons, hierarchies, or conceptual models
+      3. Reflective questions — 3 questions introduced with a plain lead-in (never "Think About It")
+      4. "What's Next" — connection to next lesson
+      5. Optional: "Key Terms" glossary and cross-references to other courses
+    examples:
+      - "1.1-compare-access-token.md"
+      - "2.2-describe-course-structure.md"
+      - "4.4-find-new-opportunities.md"
+    notes: "No screenshots needed. Tables work well for comparisons. Reflective questions should be genuine (not rhetorical) — they should make the learner think about their own experience."
+    courses_seen_in: ["andamio-for-contributors"]
+    date_added: "2026-02-28"
+
+  - id: try-it-now-section
+    description: "'Try It Now' sections in Product Demo lessons give learners immediate practice"
+    pattern: "Numbered list of 3-4 concrete actions the learner can take right now"
+    examples:
+      - source: "2.1-navigate-course-catalog.md"
+        content: "1. Go to app.andamio.io/course\n2. Find a course that interests you\n3. Click into it and identify: How many modules? How many Learning Targets? Who owns it?"
+      - source: "3.1-navigate-lesson-content.md"
+        content: "1. Go to app.andamio.io/course and open any course\n2. Click into a module\n3. Expand an SLT and open its lesson\n4. Read through and use Previous/Next buttons"
+    notes: "Good pattern for Product Demo lessons. Gives learners agency. Keep to 3-4 steps max. End with a note about what they don't need (e.g., 'You don't need a wallet connected')."
+    courses_seen_in: ["andamio-for-contributors"]
+    date_added: "2026-02-28"
+
+  - id: cross-course-breadcrumbs
+    description: "Exploration lessons reference other courses for deeper learning"
+    pattern: "'Want to go deeper?' or 'Want to know how this works?' callout at lesson end"
+    examples:
+      - source: "1.1-compare-access-token.md"
+        content: "**Want to know how this works under the hood?** The API Developers course covers the technical architecture."
+      - source: "2.2-describe-course-structure.md"
+        content: "**Want to know how this works?** The Course Creators course explains how to design effective SLTs."
+      - source: "4.4-find-new-opportunities.md"
+        content: "**Andamio for Course Creators** — Learn to build your own courses... **Andamio for API Developers** — Learn to build applications..."
+    notes: "Creates natural pathways between the three Getting Started courses. Contributors → Course Creators or API Developers."
+    courses_seen_in: ["andamio-for-contributors"]
+    date_added: "2026-02-28"
+
+  - id: gradual-release-of-responsibility
+    description: "Progressively transfer control to learners as they demonstrate competence"
+    pattern: |
+      Early modules: Full hand-holding with screenshots of every step including confirmations
+      Later modules: Skip confirmation screenshots — tell learners what to look for instead
+      Final modules: State the goal, let learner figure out the steps
+    theory: |
+      Based on "I Do, We Do, You Do" framework from education research.
+      Also called "scaffolded instruction" or "gradual release model."
+      Key insight: Every screenshot you show is a decision you're making FOR the learner.
+      As the course progresses, transfer those decisions TO the learner.
+    examples:
+      - source: "andamio-for-contributors/Module 4"
+        context: "By Module 4, learners have seen 3 transaction flows (mint, submit, claim)"
+        before: "Screenshot of 'Credential Claimed!' success screen"
+        after: "Tell learner to look for confirmation in app and wallet — let them be delighted when they see it"
+        why: "They've seen the pattern. Showing it again is hand-holding they no longer need."
+    application_by_module:
+      - modules_1_2: "Show every step with screenshots. Learner is orienting."
+      - module_3: "Show key steps, summarize repetitive patterns. Learner is practicing."
+      - module_4: "State outcomes, let learner navigate. Learner is applying."
+    notes: |
+      This creates a sense of growing competence — the course trusts the learner more as they progress.
+      Also reduces screenshot maintenance burden for later modules.
+      Research area: Look into Pearson & Gallagher (1983) "The Instruction of Reading Comprehension" for the original framework.
+    courses_seen_in: ["andamio-for-contributors"]
+    date_added: "2026-03-05"
+
+  - id: how-to-guide-structure
+    description: "Consistent structure for How To Guide lessons (terminal/config-based)"
+    pattern: |
+      1. Brief context — what this achieves and why (1-2 paragraphs)
+      2. Prerequisites / what you need (if any beyond course prereqs)
+      3. Numbered steps with code blocks — each step is one action
+      4. Verification — how to confirm the step worked
+      5. Troubleshooting — common errors and fixes
+      6. "What's Next" — connection to next lesson
+    examples:
+      - "2.1-install-nostr-rs-relay.md"
+      - "3.2-reverse-proxy-tls.md"
+      - "5.1-monitor-relay-health.md"
+    notes: |
+      Code blocks drive the pacing (like screenshots drive Product Demo). Each step should be copy-pasteable.
+      CRITICAL: Verification steps are not optional. Every command that can succeed silently MUST be followed
+      by a verification command that produces visible output. "Watch the logs" is not verification if the logs
+      can be empty. Use commands like `ss -tlnp | grep PORT`, `systemctl status SERVICE`, or `curl localhost:PORT`.
+      Troubleshooting prevents abandonment — include "if you see nothing" as a branch, not just error messages.
+    courses_seen_in: ["nostr-relay-operations"]
+    date_added: "2026-03-01"
+    last_updated: "2026-03-02"
+
+# Statistics
+stats:
+  anti_patterns_captured: 9
+  acceptable_patterns_captured: 2
+  structural_patterns_captured: 6
+  total_examples: 23

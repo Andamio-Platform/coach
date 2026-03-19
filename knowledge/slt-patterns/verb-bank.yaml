@@ -1,0 +1,240 @@
+# Verb Bank
+# Effective verbs organized by Bloom's level
+# Populated from successful SLT rewrites across courses
+
+version: 1
+last_updated: "2026-02-28"
+
+# Verbs that consistently produce measurable, assessable SLTs
+# Each entry tracks: verb, bloom_level, success_count, example_slts
+
+remember:
+  effective_verbs: []
+
+understand:
+  # e.g., explain, describe, summarize, compare
+  effective_verbs:
+    - verb: describe
+      success_count: 3
+      example_slts:
+        - "I can describe how Andamio courses are structured."
+        - "I can describe how courses are structured."
+        - "I can describe how a Nostr relay fits into the client-relay architecture."
+      courses_seen_in: ["andamio-for-contributors", "nostr-relay-operations"]
+      notes: "Works well for conceptual/Exploration SLTs. Produces assessable explanations. Strong across both platform and infrastructure courses."
+
+    - verb: identify
+      success_count: 2
+      example_slts:
+        - "I can navigate the course catalog and identify key course metadata."
+        - "I can browse projects and identify how credentials relate to project eligibility."
+      courses_seen_in: ["andamio-for-contributors"]
+      notes: "Strong as secondary verb paired with a primary action verb. Avoid prescribing what to identify (no parenthetical lists)."
+
+    - verb: explain
+      success_count: 2
+      example_slts:
+        - "I can explain the assignment review workflow."
+        - "I can explain the contributor assessment workflow."
+      courses_seen_in: ["andamio-for-course-creators"]
+      notes: "Good for conceptual SLTs. Avoid appending colon lists that prescribe the explanation."
+
+apply:
+  # e.g., use, demonstrate, implement, execute
+  effective_verbs:
+    - verb: navigate
+      success_count: 3
+      example_slts:
+        - "I can navigate the course catalog and identify key course metadata."
+        - "I can navigate to lesson content within a course module."
+        - "I can navigate the Project Studio workspace to find admin features."
+      courses_seen_in: ["andamio-for-contributors", "andamio-for-project-owners"]
+      notes: "Strong Product Demo verb for UI orientation. Maps cleanly to 'learner reaches destination.' Also works as beachball for orientation SLTs."
+
+    - verb: connect
+      success_count: 1
+      example_slts:
+        - "I can connect a Cardano wallet to the Andamio platform."
+      courses_seen_in: ["andamio-for-contributors"]
+      notes: "Clear procedural verb, observable outcome."
+
+    - verb: mint
+      success_count: 1
+      example_slts:
+        - "I can mint a portable Access Token with a unique alias."
+      courses_seen_in: ["andamio-for-contributors"]
+      notes: "Domain-specific verb. Acceptable in SLTs when the audience knows the term."
+
+    - verb: browse
+      success_count: 1
+      example_slts:
+        - "I can browse projects and identify how credentials relate to project eligibility."
+      courses_seen_in: ["andamio-for-contributors"]
+      notes: "Product Demo verb for discovery/exploration UI."
+
+    - verb: enroll
+      success_count: 1
+      example_slts:
+        - "I can enroll in a course by submitting an assignment commitment on the blockchain."
+      courses_seen_in: ["andamio-for-contributors"]
+      notes: "The 'by submitting...' clause is acceptable here because it names the mechanism (not an assessment method)."
+
+    - verb: claim
+      success_count: 1
+      example_slts:
+        - "I can claim my credential after teacher approval."
+      courses_seen_in: ["andamio-for-contributors"]
+      notes: "Clear procedural outcome. 'After teacher approval' is context, not prescription."
+
+    - verb: commit
+      success_count: 1
+      example_slts:
+        - "I can commit to a project task and submit evidence of completed work."
+      courses_seen_in: ["andamio-for-contributors"]
+      notes: "Domain-specific. 'And submit evidence' is acceptable because it's a second step in the same flow, not a dual capability."
+
+    - verb: use
+      success_count: 1
+      example_slts:
+        - "I can use my credential to join a project as a contributor."
+      courses_seen_in: ["andamio-for-contributors"]
+      notes: "Works when the purpose clause ('to join a project') is concrete and observable."
+
+    - verb: find
+      success_count: 1
+      example_slts:
+        - "I can find new opportunities for learning and contributing to projects."
+      courses_seen_in: ["andamio-for-contributors"]
+      notes: "Intentional beachball. Works for reflective/exploratory SLTs. Would be too vague for a procedural SLT."
+
+    - verb: create
+      success_count: 3
+      example_slts:
+        - "I can create lesson content using the Tiptap rich text editor."
+        - "I can create a project on the Cardano blockchain."
+        - "I can create a task with a reward amount and expiration date."
+      courses_seen_in: ["andamio-for-course-creators", "andamio-for-project-owners"]
+      notes: "Good for tool-specific SLTs. Tool name is acceptable context."
+
+    - verb: add
+      success_count: 2
+      example_slts:
+        - "I can add a teacher to a course."
+        - "I can add and remove project managers."
+      courses_seen_in: ["andamio-for-course-creators", "andamio-for-project-owners"]
+      notes: "Clean. Avoid 'at least one' quantity prescriptions. Symmetrical add/remove in one SLT is acceptable."
+
+    - verb: write
+      success_count: 1
+      example_slts:
+        - "I can write effective Student Learning Targets."
+      courses_seen_in: ["andamio-for-course-creators"]
+      notes: "Clean. Avoid appending formula prescriptions."
+
+    - verb: install
+      success_count: 1
+      example_slts:
+        - "I can install nostr-rs-relay and its dependencies on a Linux server."
+      courses_seen_in: ["nostr-relay-operations"]
+      notes: "Procedural verb for How To Guide. Slightly task-like but acceptable when installation is a genuine skill."
+
+    - verb: run
+      success_count: 1
+      example_slts:
+        - "I can run nostr-rs-relay and verify it accepts WebSocket connections."
+      courses_seen_in: ["nostr-relay-operations"]
+      notes: "Procedural verb. 'And verify' is acceptable as a second step in the same flow (run then check)."
+
+    - verb: configure
+      success_count: 3
+      example_slts:
+        - "I can configure nostr-rs-relay settings for my use case."
+        - "I can configure paid relay access or authentication requirements."
+        - "I can configure course prerequisites for a project."
+      courses_seen_in: ["nostr-relay-operations", "andamio-for-project-owners"]
+      notes: "Strong How To Guide verb for terminal/config. Also Product Demo when configuring via UI. Avoid appending inline lists of what to configure."
+
+    - verb: "set up"
+      success_count: 1
+      example_slts:
+        - "I can set up a reverse proxy with TLS so clients connect to the relay over a secure domain."
+      courses_seen_in: ["nostr-relay-operations"]
+      notes: "Good for multi-step procedural SLTs. Purpose clause ('so clients connect...') adds context without prescribing method."
+
+    - verb: define
+      success_count: 1
+      example_slts:
+        - "I can define a moderation policy for my relay."
+      courses_seen_in: ["nostr-relay-operations"]
+      notes: "Exploration verb for thinking-before-doing SLTs. The act of defining a policy is conceptual, not procedural."
+
+    - verb: monitor
+      success_count: 2
+      example_slts:
+        - "I can monitor relay health and diagnose common issues."
+        - "I can monitor contributor activity."
+      courses_seen_in: ["nostr-relay-operations", "andamio-for-project-owners"]
+      notes: "How To Guide verb when paired with diagnosis. Lighter/borderline task-focused for data-reading SLTs."
+
+    - verb: update
+      success_count: 1
+      example_slts:
+        - "I can update nostr-rs-relay and apply configuration changes without extended downtime."
+      courses_seen_in: ["nostr-relay-operations"]
+      notes: "Maintenance verb. 'Without extended downtime' is context, not prescription."
+
+    - verb: remove
+      success_count: 1
+      example_slts:
+        - "I can remove tasks from the treasury to reclaim ADA."
+      courses_seen_in: ["andamio-for-project-owners"]
+
+    - verb: generate
+      success_count: 1
+      example_slts:
+        - "I can generate and export a treasury report."
+      courses_seen_in: ["andamio-for-project-owners"]
+
+    - verb: export
+      success_count: 1
+      example_slts:
+        - "I can generate and export a treasury report."
+      courses_seen_in: ["andamio-for-project-owners"]
+
+    - verb: fund
+      success_count: 1
+      example_slts:
+        - "I can fund the project treasury and publish tasks on-chain."
+      courses_seen_in: ["andamio-for-project-owners"]
+
+    - verb: publish
+      success_count: 1
+      example_slts:
+        - "I can fund the project treasury and publish tasks on-chain."
+      courses_seen_in: ["andamio-for-project-owners"]
+
+analyze:
+  # e.g., distinguish, examine, compare, contrast
+  effective_verbs:
+    - verb: compare
+      success_count: 2
+      example_slts:
+        - "I can compare a portable Andamio Access Token to a traditional platform account."
+        - "I can compare nostr-rs-relay to other relay implementations."
+      courses_seen_in: ["andamio-for-contributors", "nostr-relay-operations"]
+      notes: "Strong Exploration verb. Avoid 'by identifying...' how-clauses. Works for both conceptual comparisons and technical tool selection."
+
+evaluate:
+  effective_verbs:
+    - verb: assess
+      success_count: 1
+      example_slts: ["I can assess a contributor's assignment."]
+      notes: "Highest Bloom's level in a tool-operation course. Appropriate when decision has irreversible on-chain consequences."
+      courses_seen_in: ["andamio-for-project-owners"]
+
+create:
+  effective_verbs: []
+
+# Verbs to avoid - consistently produce unmeasurable SLTs
+avoid:
+  problematic_verbs: []

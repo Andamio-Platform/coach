@@ -1,0 +1,7 @@
+.obsidian
+**/.DS_Store
+.claude/
+courses-in-progress/*
+!courses-in-progress/ABOUT.md
+compiled/*
+!compiled/ABOUT.md

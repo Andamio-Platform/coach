@@ -1,0 +1,124 @@
+# Quality Issues
+# Common SLT quality issues and patterns that indicate them
+# Used by /assess-slts to flag known problems proactively
+
+version: 1
+last_updated: "2026-02-27"
+
+# Each issue pattern includes:
+# - pattern: how to detect it (verb, structure, keyword)
+# - description: what the problem is
+# - impact: which assessment dimensions suffer
+# - frequency: how often seen (count)
+# - example_bad: example of problematic SLT
+# - example_fix: proven rewrite
+# - courses_seen_in: list of course slugs
+
+issues:
+  - pattern: "by [verb]ing" or "by identifying"
+    description: "SLT includes a 'how' clause that prescribes assessment method"
+    impact: ["Specificity", "Focus on Learning"]
+    frequency: 3
+    example_bad: "I can compare X to Y by identifying at least two differences in A, B, and C."
+    example_fix: "I can compare X to Y."
+    courses_seen_in: ["andamio-for-contributors", "andamio-for-course-creators"]
+    date: "2026-02-27"
+
+  - pattern: "parenthetical list (item, item, item)" or "colon list: X > Y > Z" or "X, Y, and Z"
+    description: "SLT includes parenthetical or inline list that prescribes specific items to identify/cover"
+    impact: ["Specificity"]
+    frequency: 9
+    example_bad: "I can identify key course metadata (status, modules, credential)."
+    example_fix: "I can identify key course metadata."
+    courses_seen_in: ["andamio-for-contributors", "andamio-for-course-creators", "nostr-relay-operations"]
+    date: "2026-03-01"
+
+  - pattern: "and [second verb]" or "and how [topic]" or "and explain"
+    description: "SLT contains two capabilities joined by 'and' - should be separate SLTs"
+    impact: ["Focus on Learning", "Specificity"]
+    frequency: 3
+    example_bad: "I can claim my credential and explain what makes it verifiable."
+    example_fix: "I can claim my credential after teacher approval."
+    courses_seen_in: ["andamio-for-contributors", "andamio-for-course-creators", "nostr-relay-operations", "andamio-for-project-owners"]
+    date: "2026-03-05"
+    refinement:
+      description: "'And' connecting symmetrical operations (add/remove) or single-workflow actions (fund/publish) is acceptable. Flag only when connecting genuinely independent capabilities."
+      acceptable_examples:
+        - "I can add and remove project managers."
+        - "I can fund the project treasury and publish tasks on-chain."
+        - "I can generate and export a treasury report."
+      discriminating_question: "Are these two steps of one workflow, or two independent skills?"
+      courses_seen_in: ["andamio-for-project-owners"]
+      date: "2026-03-05"
+
+  - pattern: "at least one" or "at least N"
+    description: "SLT prescribes quantity as assessment criteria - belongs in assignment, not SLT"
+    impact: ["Specificity"]
+    frequency: 2
+    example_bad: "I can add at least one teacher to a course."
+    example_fix: "I can add a teacher to a course."
+    courses_seen_in: ["andamio-for-course-creators"]
+    date: "2026-02-27"
+
+  - pattern: "using the formula: X + Y + Z"
+    description: "SLT prescribes a specific method or formula - how clause variant"
+    impact: ["Specificity", "Focus on Learning"]
+    frequency: 1
+    example_bad: "I can write SLTs using the formula: measurable verb + specific outcome + observable evidence."
+    example_fix: "I can write effective Student Learning Targets."
+    courses_seen_in: ["andamio-for-course-creators"]
+    date: "2026-02-27"
+
+  - pattern: "including X, Y, and Z"
+    description: "SLT prescribes specific content types or elements to include"
+    impact: ["Specificity"]
+    frequency: 1
+    example_bad: "I can create lesson content including text, formatting, and media."
+    example_fix: "I can create lesson content using the Tiptap rich text editor."
+    courses_seen_in: ["andamio-for-course-creators"]
+    date: "2026-02-27"
+
+# Acceptable patterns - look like issues but serve pedagogical purpose
+# Assessors should flag but NOT penalize these when context is clear
+acceptable_patterns:
+  - pattern: "beachball_slt"
+    description: "Intentionally lighter SLT that gives learners easy wins in intro/onboarding courses"
+    when_valid:
+      - "Course is intro/onboarding level"
+      - "SLT is positioned before or after heavier procedural steps"
+      - "Pedagogical purpose is documented (e.g., build momentum, close thematic loop)"
+    examples:
+      - slt: "I can navigate to lesson content within a course module."
+        position: "Before on-chain enrollment step"
+        purpose: "Easy orientation win before heavier action"
+        course: "andamio-for-contributors"
+      - slt: "I can find new opportunities for learning and contributing to projects."
+        position: "Final SLT in course"
+        purpose: "Invites open-ended exploration, closes contribution loop thematically"
+        course: "andamio-for-contributors"
+    guidance: "Flag vagueness in assessment notes but rate as Strong if pedagogical purpose is clear. Document purpose in lesson inputs."
+    frequency: 2
+    courses_seen_in: ["andamio-for-contributors"]
+    date: "2026-02-27"
+
+# Pattern categories for organization
+categories:
+  unmeasurable_verb:
+    description: "Verb that cannot be assessed (understand, know, learn, etc.)"
+    severity: high
+
+  task_focused:
+    description: "SLT describes activity rather than learning outcome"
+    severity: medium
+
+  too_broad:
+    description: "SLT covers multiple capabilities or is too vague"
+    severity: high
+
+  implementation_detail:
+    description: "SLT includes API/function details that belong in lesson"
+    severity: low
+
+  missing_evidence:
+    description: "SLT lacks observable evidence or context"
+    severity: medium

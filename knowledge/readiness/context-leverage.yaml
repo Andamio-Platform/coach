@@ -1,0 +1,324 @@
+# Context Leverage
+# Resources ranked by how many SLTs they unlock
+# Used by /self-assess-readiness to prioritize shopping list
+# Seeded from examples/go-slts-readiness-assessment.md
+
+version: 1
+last_updated: "2026-03-06"
+
+# Each resource includes:
+# - resource: description of the resource
+# - type: Docs, Example Code, Human Review, Version Confirmation
+# - slts_unlocked: list of SLT identifiers
+# - priority: High, Medium, Low (computed from slt count)
+# - obtained: boolean - has this been gathered?
+# - effectiveness: null | confirmed | partial | unhelpful (after use)
+# - notes: any observations about this resource
+# - courses_seen_in: which courses need this resource
+
+resources:
+  - resource: "Apollo API reference + transaction building examples"
+    type: "Docs + Example Code"
+    slts_unlocked:
+      - "go-pbl:102.2"
+      - "go-pbl:102.3"
+      - "go-pbl:102.5"
+      - "go-pbl:102.6"
+      - "go-pbl:203.2"
+      - "go-pbl:203.3"
+      - "go-pbl:203.4"
+      - "go-pbl:203.5"
+      - "go-pbl:203.6"
+      - "go-pbl:204.1"
+      - "go-pbl:204.4"
+    priority: "High"
+    obtained: false
+    effectiveness: null
+    notes: "Highest leverage resource - unlocks 11 SLTs spanning three modules"
+    courses_seen_in: ["go-pbl"]
+
+  - resource: "gOuroboros API reference + Starter Kit repo"
+    type: "Docs + Example Code"
+    slts_unlocked:
+      - "go-pbl:101.1"
+      - "go-pbl:101.2"
+      - "go-pbl:101.3"
+      - "go-pbl:101.4"
+      - "go-pbl:102.4"
+    priority: "High"
+    obtained: false
+    effectiveness: null
+    notes: "Unlocks all of Module 101 + transaction submission"
+    courses_seen_in: ["go-pbl"]
+
+  - resource: "Adder documentation + Starter Kit repo"
+    type: "Docs + Example Code"
+    slts_unlocked:
+      - "go-pbl:201.1"
+      - "go-pbl:201.2"
+      - "go-pbl:201.3"
+      - "go-pbl:202.2"
+      - "go-pbl:202.3"
+      - "go-pbl:202.5"
+      - "go-pbl:204.3"
+    priority: "High"
+    obtained: false
+    effectiveness: null
+    notes: "Unlocks all of Module 201 + query/event integration"
+    courses_seen_in: ["go-pbl"]
+
+  - resource: "Bursa API reference + wallet creation example"
+    type: "Docs + Example Code"
+    slts_unlocked:
+      - "go-pbl:102.1"
+      - "go-pbl:102.3"
+    priority: "Medium"
+    obtained: false
+    effectiveness: null
+    notes: "Required for wallet creation and manual signing"
+    courses_seen_in: ["go-pbl"]
+
+  - resource: "Blink Labs library READMEs (Bursa, Apollo, Adder, Cardano Up)"
+    type: "Docs"
+    slts_unlocked:
+      - "go-pbl:100.3"
+      - "go-pbl:100.4"
+      - "go-pbl:100.5"
+      - "go-pbl:100.6"
+    priority: "Medium"
+    obtained: false
+    effectiveness: null
+    notes: "Explains why each library was built"
+    courses_seen_in: ["go-pbl"]
+
+  - resource: "Aiken-to-Go type mapping example (type → blueprint → Go struct)"
+    type: "Example Code"
+    slts_unlocked:
+      - "go-pbl:203.1"
+      - "go-pbl:204.2"
+    priority: "Medium"
+    obtained: false
+    effectiveness: null
+    notes: "Shows complete flow from Aiken to Go"
+    courses_seen_in: ["go-pbl"]
+
+  - resource: "Cardano Go query provider comparison (current state)"
+    type: "Docs"
+    slts_unlocked:
+      - "go-pbl:202.1"
+      - "go-pbl:202.4"
+    priority: "Medium"
+    obtained: false
+    effectiveness: null
+    notes: "Current landscape of Go-accessible Cardano indexers"
+    courses_seen_in: ["go-pbl"]
+
+  - resource: "Cardano ledger CDDL specification + guided walkthrough"
+    type: "Docs"
+    slts_unlocked:
+      - "go-pbl:204.6"
+    priority: "Medium"
+    obtained: false
+    effectiveness: null
+    notes: "For understanding transaction structure"
+    courses_seen_in: ["go-pbl"]
+
+  - resource: "Current Ouroboros consensus explainer"
+    type: "Docs"
+    slts_unlocked:
+      - "go-pbl:100.2"
+    priority: "Low"
+    obtained: false
+    effectiveness: null
+    notes: "IOG's current Ouroboros variant documentation"
+    courses_seen_in: ["go-pbl"]
+
+  - resource: "Course setup guide and repo structure"
+    type: "Docs"
+    slts_unlocked:
+      - "go-pbl:100.7"
+    priority: "Low"
+    obtained: false
+    effectiveness: null
+    notes: "Course-specific prerequisites and setup"
+    courses_seen_in: ["go-pbl"]
+
+  - resource: "Fiber version confirmation (v2 vs v3)"
+    type: "Version Confirmation"
+    slts_unlocked:
+      - "go-pbl:099.4"
+    priority: "Low"
+    obtained: false
+    effectiveness: null
+    notes: "Clarify which Fiber version course targets"
+    courses_seen_in: ["go-pbl"]
+
+  - resource: "Common Cardano Go cross-stack error patterns"
+    type: "Example Code + Human Review"
+    slts_unlocked:
+      - "go-pbl:301.1"
+    priority: "Low"
+    obtained: false
+    effectiveness: null
+    notes: "Debugging workflows for gOuroboros/Apollo/Adder stack"
+    courses_seen_in: ["go-pbl"]
+
+  - resource: "Current Cardano Go community resource list"
+    type: "Human Review"
+    slts_unlocked:
+      - "go-pbl:301.3"
+    priority: "Low"
+    obtained: false
+    effectiveness: null
+    notes: "Blink Labs Discord, Go-specific Cardano channels"
+    courses_seen_in: ["go-pbl"]
+
+  - resource: "Andamio app.andamio.io UI screenshot set"
+    type: "Screenshots"
+    slts_unlocked:
+      - "contributors:1.2"
+      - "contributors:1.3"
+      - "contributors:2.1"
+      - "contributors:2.3"
+      - "contributors:3.1"
+      - "contributors:3.2"
+      - "contributors:4.1"
+      - "contributors:4.2"
+      - "contributors:4.3"
+    priority: "High"
+    obtained: partial
+    effectiveness: confirmed
+    notes: "26/39 screenshots captured across 3 sessions. 6 SLTs fully unlocked (1.2, 1.3, 2.1, 2.3, 3.1, 3.2), all lessons written successfully. 3 remaining (4.1, 4.2, 4.3) blocked on teacher approval → credential → project join chain. Screenshots alone were necessary but NOT sufficient for 3.1 and 3.2 — human corrections about platform behavior were critical."
+    courses_seen_in: ["andamio-for-contributors"]
+
+  - resource: "Human platform knowledge corrections"
+    type: "Human Review"
+    slts_unlocked:
+      - "contributors:3.1"
+      - "contributors:3.2"
+    priority: "High"
+    obtained: true
+    effectiveness: confirmed
+    notes: "Screenshots showed the UI but not the interaction model. Human corrections were essential: (1) lessons are public, no enrollment needed; (2) enrollment = first assignment commitment, no separate button; (3) two-phase submission: Lock My Work then Submit Assignment; (4) first commitment includes deposit, returned on credential claim. These corrections were captured in voice-patterns.md Platform Facts section for reuse across all future lessons."
+    courses_seen_in: ["andamio-for-contributors"]
+
+  - resource: "Tiered screenshot capture approach"
+    type: "Process"
+    slts_unlocked: []
+    priority: "Medium"
+    obtained: true
+    effectiveness: confirmed
+    notes: "Not a content resource but a process insight. Capturing screenshots in dependency tiers (browse → identity → learn → credential → contribute) is the highest-leverage process pattern for Product Demo courses. Each tier requires the previous tier's artifacts. Plan for async gaps (teacher approval between Tier 3 and 4). Writing lessons in capture order (not SLT order) is more efficient."
+    courses_seen_in: ["andamio-for-contributors"]
+
+  # Nostr Relay Operations resources
+  - resource: "nostr-rs-relay README + GitHub docs"
+    type: "Docs"
+    slts_unlocked:
+      - "nostr-relay:2.1"
+      - "nostr-relay:2.2"
+      - "nostr-relay:3.1"
+      - "nostr-relay:3.2"
+      - "nostr-relay:5.2"
+    priority: "High"
+    obtained: true
+    effectiveness: confirmed
+    notes: "Highest leverage resource for this course — unlocked 5 SLTs. Included install deps, run command, default port, and reverse proxy config. Fetched via gh API in one command."
+    courses_seen_in: ["nostr-relay-operations"]
+
+  - resource: "nostr-rs-relay config.toml reference"
+    type: "Docs"
+    slts_unlocked:
+      - "nostr-relay:3.1"
+      - "nostr-relay:4.2"
+      - "nostr-relay:5.1"
+    priority: "High"
+    obtained: true
+    effectiveness: confirmed
+    notes: "Complete annotated config with all sections: info, database, network, limits, authorization (NIP-42, whitelist), verified_users, pay_to_relay, logging. Every config key documented with comments. Fetched via gh API."
+    courses_seen_in: ["nostr-relay-operations"]
+
+  - resource: "nostr-rs-relay reverse-proxy.md"
+    type: "Docs"
+    slts_unlocked:
+      - "nostr-relay:3.2"
+    priority: "Medium"
+    obtained: true
+    effectiveness: confirmed
+    notes: "Provided tested nginx config with WebSocket headers, tested on Ubuntu 20.04/22.04. Also included HAProxy and Traefik configs."
+    courses_seen_in: ["nostr-relay-operations"]
+
+  - resource: "GitHub repo docs fetched via gh API"
+    type: "Process"
+    slts_unlocked: []
+    priority: "Medium"
+    obtained: true
+    effectiveness: confirmed
+    notes: "Process insight: for open source projects, 'gh api repos/OWNER/REPO/contents/FILE --jq .content | base64 -d' is the fastest way to fetch context docs. Two commands (README + config.toml) unlocked 7 of 7 Needs Context SLTs for this course."
+    courses_seen_in: ["nostr-relay-operations"]
+
+  # Andamio for API Developers resources
+  - resource: "Andamio App Template codebase (file system access)"
+    type: "Example Code"
+    slts_unlocked:
+      - "api-developers:102.1"
+      - "api-developers:102.3"
+      - "api-developers:103.1"
+      - "api-developers:103.2"
+      - "api-developers:104.1"
+    priority: "High"
+    obtained: true
+    effectiveness: confirmed
+    notes: "Direct file system access to andamio-app-template repo was highest leverage resource. Verified auth patterns, transaction types, directory structure. 5 SLTs built successfully."
+    courses_seen_in: ["andamio-for-api-developers"]
+
+  - resource: "Template audit before compile (transaction-ui.ts, use-course.ts)"
+    type: "Example Code"
+    slts_unlocked:
+      - "api-developers:101.2"
+      - "api-developers:104.2"
+    priority: "High"
+    obtained: true
+    effectiveness: confirmed
+    notes: "Critical audit step caught wrong endpoint paths. Without this, 101.2 and 104.2 would have shipped with non-working curl commands. Verified actual endpoints: /api/v2/course/user/courses/list, /api/v2/tx/course/student/assignment/commit"
+    courses_seen_in: ["andamio-for-api-developers"]
+
+  - resource: "Pre-compile audit pattern"
+    type: "Process"
+    slts_unlocked: []
+    priority: "High"
+    obtained: true
+    effectiveness: confirmed
+    notes: "Process insight: For Developer Documentation SLTs, audit lessons against actual codebase BEFORE compiling. Endpoint paths and transaction types are high-confabulation zones. This caught 2 errors that would have shipped."
+    courses_seen_in: ["andamio-for-api-developers"]
+
+  # andamio-for-project-owners resources
+  - resource: "Project creation form screenshots (entry point, form, wallet signing, success state)"
+    type: "Screenshots"
+    slts_unlocked:
+      - "project-owners:1.1"
+      - "project-owners:1.2"
+    priority: "High"
+    obtained: true
+    effectiveness: confirmed
+    notes: "6 screenshots captured by user, covering both SLTs. Revealed three prerequisite states (no courses, not public, available) — more nuance than anticipated. One screenshot session unlocked the entire course."
+    courses_seen_in: ["andamio-for-project-owners"]
+
+  - resource: "Task lifecycle screenshots from task-management/ directory"
+    type: "Screenshots"
+    slts_unlocked:
+      - "project-owners:2.3"
+      - "project-owners:3.1"
+      - "project-owners:3.3"
+    priority: "Medium"
+    obtained: true
+    effectiveness: confirmed
+    notes: "Already existed but were unused in lessons. Screenshot audit discovered them in adjacent task-management/ directory. Decision buttons screenshot was highest-value addition — visually proved the expiration gate for Deny."
+    courses_seen_in: ["andamio-for-project-owners"]
+
+# Statistics
+stats:
+  total_resources: 25  # combined from both branches
+  obtained: 11
+  partially_obtained: 1
+  confirmed_effective: 12

@@ -1,0 +1,93 @@
+# Knowledge Index
+# Master index for compound knowledge across all courses
+# Updated by /compound skill
+
+version: 1
+last_updated: "2026-03-16"
+
+# Aggregate statistics
+stats:
+  courses_processed: 6
+  slts_analyzed: 102  # 80 prior + 12 api-developers + 10 project-owners
+  successful_rewrites: 15
+  quality_issues_captured: 6
+  quality_issue_refinements: 1
+  acceptable_patterns_captured: 1
+  verb_bank_entries: 33
+  heuristics_captured: 33
+  edge_cases_captured: 1
+  calibration_entries: 41  # 19 prior + 12 api-developers + 10 project-owners
+  calibration_accuracy_rate: 100  # tier-level (maintained)
+  calibration_dimension_accuracy: 88  # combined from both branches
+  style_anti_patterns: 9
+  style_acceptable_patterns: 2
+  style_structural_patterns: 5
+  platform_facts_documented: 5
+  context_resources_tracked: 25  # combined
+  context_resources_confirmed: 12
+  lessons_built: 41  # 19 prior + 12 api-developers + 10 project-owners
+  import_gotchas_captured: 9
+
+# Seeding source
+seeded_from:
+  - file: "examples/go-slts-readiness-assessment.md"
+    date: "2026-02-27"
+    extracted: ["context-leverage"]
+
+# Compound runs
+compound_runs:
+  - date: "2026-02-27"
+    course: "andamio-for-contributors"
+    phase: "quality-review + classification + readiness"
+    notes: "Initial knowledge extraction from phases 1-6"
+  - date: "2026-02-27"
+    course: "andamio-for-course-creators"
+    phase: "quality-review"
+    notes: "SLT patterns from second course"
+  - date: "2026-02-28"
+    course: "andamio-for-contributors"
+    phase: "lesson-build (mid-workflow, 9/12 lessons)"
+    notes: "Calibration from 9 lessons, verb bank populated, structural patterns extracted, style anti-patterns updated"
+  - date: "2026-03-01"
+    course: "nostr-relay-operations"
+    phase: "rollup (full course, 10/10 lessons)"
+    notes: "First non-Andamio course. First How To Guide-heavy course (7/10). New verb patterns (install, configure, monitor, update, define), interface-determines-type heuristic, gh API context-fetching pattern. All 10 calibration entries accurate at tier level."
+  - date: "2026-03-02"
+    course: "nostr-relay-operations"
+    phase: "student-testing (new category)"
+    notes: "First coaching session with a student testing a lesson. Discovered silent-success-no-verification and compounding-silence anti-patterns. Lesson 3.1 needs verification step added. Strengthened how-to-guide-structure with mandatory verification guidance."
+  - date: "2026-03-05"
+    course: "andamio-for-project-owners"
+    phase: "rollup (full course, 10/10 lessons)"
+    notes: "Second Andamio platform course. All 10 SLTs calibrated (8 Ready, 2 Needs Context). New verb patterns (create, fund, publish, remove, add, monitor, generate, export, assess). Why-vs-how heuristic, quality issue refinement for 'and' pattern. Screenshot audit process confirmed."
+  - date: "2026-03-06"
+    course: "andamio-for-api-developers"
+    phase: "lesson-build (100-level, 12/12 lessons)"
+    notes: "All 12 SLTs built with 'less is more' approach. 2 Ready SLTs succeeded without context. 10 Needs Context: 7 succeeded via template codebase access, 3 partial (2 wrong endpoints caught by audit, 1 missing screenshots). New insight: pre-compile audit is critical for Developer Documentation SLTs with endpoint-specific code."
+  - date: "2026-03-16"
+    course: "aiken-project-based-learning"
+    phase: "compile-validation (post-import debugging)"
+    notes: "First post-import debugging session. Discovered 5 import gotchas: placeholder lessons get skipped and re-indexed (critical), assignment format must match spec, SLT text must be preserved exactly, module code accepts slugs not just numbers, orphan manifest entries. Created new knowledge category: compile/import-gotchas.yaml. Updated /compile skill to fix SLT prefix and code format instructions."
+  - date: "2026-03-16"
+    course: "andamio-for-contributors"
+    phase: "cli-import (full course, 4 modules via andamio-cli)"
+    notes: "First full CLI import. Discovered 4 new gotchas: outline.md must NOT have H1 (title from YAML only), lesson files MUST have H1 (becomes lesson title), SLT creation requires omitting slt_index (CLI bug), module create API uses flat body not nested. Created /andamio-cli skill. Updated /compile skill format rules. Wrote 2 missing lessons (4.2, 4.3). All 12 SLTs, 12 lessons, 4 assignments imported to preprod."
+
+# Cross-references to knowledge files
+files:
+  slt_patterns:
+    verb_bank: slt-patterns/verb-bank.yaml
+    quality_issues: slt-patterns/quality-issues.yaml
+    successful_rewrites: slt-patterns/successful-rewrites.yaml
+  readiness:
+    context_leverage: readiness/context-leverage.yaml
+    calibration: readiness/calibration.yaml
+  lesson_types:
+    heuristics: lesson-types/heuristics.yaml
+    edge_cases: lesson-types/edge-cases.yaml
+  lesson_writing:
+    style_patterns: lesson-writing/style-patterns.yaml
+  compile:
+    import_gotchas: compile/import-gotchas.yaml
+  voice:
+    voice_patterns: voice-patterns.md
