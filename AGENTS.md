@@ -86,4 +86,8 @@ The `compound` skill writes back to `knowledge/`, closing the compounding loop.
 
 ## Roadmap
 
-Current phase: Phase A (Build Workflow and Lesson Skills). Phase B packages this for distribution across agent ecosystems. Phase C extends to additional platforms.
+Current phase: Phase B (Package and Distribute). Phase A (Build Workflow and Lesson Skills) is complete with 14 skills. Phase B adds plugin manifests, npm packaging, and the Andamio marketplace for Claude Code. Phase C extends to additional platforms.
+
+### Plugin Context
+
+When running as a Claude Code plugin, skills resolve paths using `${CLAUDE_PLUGIN_ROOT}` (immutable plugin files) and `${CLAUDE_PLUGIN_DATA}` (persistent user data). The `/start` skill initializes user knowledge from seed data on first run. The `/compound` skill writes to `${CLAUDE_PLUGIN_DATA}/knowledge/`. Clone/symlink users are unaffected — paths default to project-relative.

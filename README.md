@@ -1,13 +1,32 @@
 # Coach
 
-## Quick Start
+## Installation
+
+### Claude Code (plugin)
+
+```
+/plugin marketplace add Andamio-Platform/andamio-marketplace
+/plugin install coach@andamio
+```
+
+### Pi.dev (npm)
+
+```
+pi install npm:@andamio/coach
+```
+
+### Other agents (clone)
 
 ```bash
-git clone https://github.com/andamio-platform/coach.git
+git clone https://github.com/Andamio-Platform/coach.git
 cd coach
 ```
 
-Open your AI coding agent and run the `start` skill. Coach will welcome you and ask how you'd like to work. Three paths, one destination:
+Then point your agent at the `skills/` directory.
+
+## Quick Start
+
+Run the `start` skill. Coach will welcome you and ask how you'd like to work. Three paths, one destination:
 
 - **Beginner** - You want to design a personalized learning experience about something new
 - **Apprentice** - You know some of the content and you're ready to build a course
@@ -130,9 +149,25 @@ compiled/
 
 ## Using Coach Skills in Another Project
 
-You can bring coach's skills into any project. Most agents discover skills in a `.agents/skills/` directory (the emerging cross-client convention) or a client-specific path.
+You can bring coach's skills into any project.
 
-### Option 1: Git submodule
+### Option 1: Plugin install (recommended for Claude Code)
+
+Install via the Andamio marketplace — skills are automatically available as `coach:start`, `coach:draft-slts`, etc.
+
+```
+/plugin install coach@andamio
+```
+
+### Option 2: npm install
+
+```bash
+npm install -D @andamio/coach
+```
+
+Skills and seed knowledge are available in `node_modules/@andamio/coach/skills/`. Note: the compounding loop does not persist in `node_modules/` — for full compounding, use the plugin or clone method.
+
+### Option 3: Git submodule
 
 Add coach as a submodule and symlink the skills:
 
@@ -144,7 +179,7 @@ ln -s .coach/skills .agents/skills
 
 Your agent discovers the skills automatically. Knowledge and research are available at `.coach/knowledge/` and `.coach/research/`.
 
-### Option 2: Setup script
+### Option 4: Setup script
 
 For course repos that want full symlink integration (skills, knowledge, and research):
 
@@ -155,7 +190,7 @@ cd /path/to/your-course-repo
 
 See [docs/setup-course-repo.md](docs/setup-course-repo.md) for the full guide.
 
-### Option 3: Clone alongside
+### Option 5: Clone alongside
 
 Clone coach next to your project and point your agent to it:
 
@@ -218,7 +253,7 @@ Coach was originally built with Claude Code. For the best experience, add the [c
 
 ## Roadmap
 
-### Phase A: Build Workflow and Lesson Skills (Current)
+### Phase A: Build Workflow and Lesson Skills
 
 - [x] 14 skills (10 course development + 4 onboarding pathways)
 - [x] Knowledge compounding loop
@@ -227,9 +262,13 @@ Coach was originally built with Claude Code. For the best experience, add the [c
 - [ ] Lesson type skills (product-demo, developer-documentation, etc.)
 - [ ] `evaluate-assignment` skill for learner submissions
 
-### Phase B: Package and Distribute
+### Phase B: Package and Distribute (Current)
 
-Package for easy installation across agent ecosystems.
+- [x] Claude Code plugin (`.claude-plugin/plugin.json`)
+- [x] [Andamio marketplace](https://github.com/Andamio-Platform/andamio-marketplace) for Claude Code
+- [x] npm package (`@andamio/coach`) for Pi.dev and Vercel Skills CLI
+- [x] Community marketplace compatibility (SkillsMP, SkillHub)
+- [x] Plugin-aware knowledge architecture (`${CLAUDE_PLUGIN_DATA}` for persistent compounding)
 
 ### Phase C: Extend
 

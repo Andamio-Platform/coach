@@ -292,9 +292,9 @@ The two platform-specific skills (`compile`, `andamio-cli`) already have `compat
 
 ### Phase B3: Andamio Marketplace
 
-- [ ] Create `Andamio-Platform/andamio-marketplace` repo on GitHub
-- [ ] Add `.claude-plugin/marketplace.json` listing coach
-- [ ] Add `README.md` explaining the marketplace and how to add it
+- [x] Create `Andamio-Platform/andamio-marketplace` repo on GitHub
+- [x] Add `.claude-plugin/marketplace.json` listing coach
+- [x] Add `README.md` explaining the marketplace and how to add it
 - [ ] Test: `/plugin marketplace add Andamio-Platform/andamio-marketplace` works
 - [ ] Test: `/plugin install coach@andamio` installs and skills are accessible as `coach:*`
 - [ ] Test: `/coach:start` runs correctly and offers pathway selection
@@ -305,17 +305,17 @@ The two platform-specific skills (`compile`, `andamio-cli`) already have `compat
 - [ ] `npm publish --access public` from coach repo
 - [ ] Test: `pi install npm:@andamio/coach` installs and skills are discoverable
 - [ ] Test: `npx skills add Andamio-Platform/coach` installs skills
-- [ ] Document npm limitations (no compounding loop) in README
+- [x] Document npm limitations (no compounding loop) in README
 
 ### Phase B5: Documentation and Launch
 
-- [ ] Update README.md "Roadmap" section — mark Phase B complete, add installation commands
-- [ ] Add "Installation" section to README with all three channels:
+- [x] Update README.md "Roadmap" section — mark Phase B complete, add installation commands
+- [x] Add "Installation" section to README with all three channels:
   - Claude Code: marketplace add + plugin install
   - Pi.dev: `pi install npm:@andamio/coach`
   - Other agents: `npx skills add` or clone
-- [ ] Update "Using Coach Skills in Another Project" section — add plugin/npm methods alongside existing git methods
-- [ ] Update AGENTS.md roadmap status
+- [x] Update "Using Coach Skills in Another Project" section — add plugin/npm methods alongside existing git methods
+- [x] Update AGENTS.md roadmap status
 - [ ] Announce on relevant channels
 
 ## Success Metrics
