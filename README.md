@@ -195,22 +195,29 @@ Then configure your agent to look for skills in `../coach/skills/`. How you do t
 
 ## Knowledge Compounding
 
-The `knowledge/` directory stores structured patterns extracted from course development:
+Everything the skills learn lives in `knowledge/`:
 
 ```
 knowledge/
-├── index.yaml                    # Master index, aggregate stats
-├── voice-patterns.md             # Prose style guide for lesson writing
-├── slt-patterns/                 # Verb bank, quality issues, successful rewrites
-├── readiness/                    # Context leverage rankings, calibration data
-├── lesson-types/                 # Heuristics and edge cases
-├── lesson-writing/               # Style anti-patterns and acceptable patterns
-└── compile/                      # Import gotchas discovered during platform uploads
+├── index.yaml              # Master index, aggregate stats
+├── voice-patterns.md       # Prose style guide for lesson writing
+├── slt-patterns/           # Verb bank, quality issues, successful rewrites
+├── readiness/              # Context leverage rankings, calibration data
+├── lesson-types/           # Heuristics and edge cases
+├── lesson-writing/         # Style anti-patterns and acceptable patterns
+├── compile/                # Import gotchas discovered during platform uploads
+└── research/               # SLT research report (Bloom's, Marzano, Stiggins)
 ```
 
-## Research Foundation
+Coach ships with **seed patterns** extracted from real courses — 33 verbs with Bloom's level mappings, 15 proven SLT rewrites, 33 lesson type heuristics, and calibration rules. These are generic and platform-agnostic.
 
-The skills are grounded in education research. See `knowledge/research/slt-research-report.md` for the full report on SLT definitions, Bloom's Taxonomy alignment, and formative assessment coupling.
+### Making It Yours
+
+When you run `/compound` after building a course, your patterns are added on top of the seed data. Nothing is overwritten — counts increment, new entries append, and the knowledge base grows to reflect your courses.
+
+To start fresh: delete the contents of each YAML file (keep the schema headers) and run `/compound` on your first course.
+
+See [Knowledge Compounding Guide](docs/knowledge-compounding.md) for the full details on how the loop works, what each file stores, and how to curate or reset.
 
 ## Adapting for Your Platform
 

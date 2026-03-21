@@ -95,37 +95,37 @@ Use `git mv research knowledge/research` to preserve history.
 
 ### Phase 1: Move research/ into knowledge/
 
-- [ ] `git mv research knowledge/research`
-- [ ] Update `package.json` — remove `"research/**"` from `files` array
-- [ ] Update `scripts/setup-course-repo.sh` — remove research symlink
-- [ ] Update all skill Path Resolution sections: `research/` → `knowledge/research/`
-- [ ] Update all skill inline references: `research/slt-research-report.md` → `knowledge/research/slt-research-report.md`
-- [ ] Update `README.md` references
-- [ ] Update `AGENTS.md` directory structure and references
-- [ ] Update `docs/how-to-adapt.md`
-- [ ] Update `docs/setup-course-repo.md`
-- [ ] Verify: `grep -r "research/" skills/ --include="*.md"` returns only `knowledge/research/` paths
+- [x] `git mv research knowledge/research`
+- [x] Update `package.json` — remove `"research/**"` from `files` array
+- [x] Update `scripts/setup-course-repo.sh` — remove research symlink
+- [x] Update all skill Path Resolution sections: `research/` → `knowledge/research/`
+- [x] Update all skill inline references: `research/slt-research-report.md` → `knowledge/research/slt-research-report.md`
+- [x] Update `README.md` references
+- [x] Update `AGENTS.md` directory structure and references
+- [x] Update `docs/how-to-adapt.md`
+- [x] Update `docs/setup-course-repo.md`
+- [x] Verify: `grep -r "research/" skills/ --include="*.md"` returns only `knowledge/research/` paths
 
 ### Phase 2: Curate knowledge to generic patterns
 
-- [ ] `slt-patterns/verb-bank.yaml` — strip Andamio course names from `example_slts`
-- [ ] `slt-patterns/quality-issues.yaml` — strip `courses_seen_in`, genericize examples
-- [ ] `slt-patterns/successful-rewrites.yaml` — strip `course` field or replace with generic label
-- [ ] `readiness/calibration.yaml` — reduce to schema + 2-3 example entries
-- [ ] `readiness/context-leverage.yaml` — reduce to schema + 2-3 generic examples
-- [ ] `lesson-types/heuristics.yaml` — strip course-specific examples, keep generic
-- [ ] `lesson-types/edge-cases.yaml` — strip course slugs
-- [ ] `compile/import-gotchas.yaml` — reduce to schema + 1 example
-- [ ] `index.yaml` — reset stats to reflect curated counts, update `last_updated`
-- [ ] `voice-patterns.md` — already generic, no changes needed
-- [ ] `lesson-writing/style-patterns.yaml` — already generic, no changes needed
+- [x] `slt-patterns/verb-bank.yaml` — strip Andamio course names from `example_slts`
+- [x] `slt-patterns/quality-issues.yaml` — strip `courses_seen_in`, genericize examples
+- [x] `slt-patterns/successful-rewrites.yaml` — strip `course` field or replace with generic label
+- [x] `readiness/calibration.yaml` — reduce to schema + 2-3 example entries
+- [x] `readiness/context-leverage.yaml` — reduce to schema + 2-3 generic examples
+- [x] `lesson-types/heuristics.yaml` — strip course-specific examples, keep generic
+- [x] `lesson-types/edge-cases.yaml` — strip course slugs
+- [x] `compile/import-gotchas.yaml` — reduce to schema + 1 example
+- [x] `index.yaml` — reset stats to reflect curated counts, update `last_updated`
+- [x] `voice-patterns.md` — already generic, no changes needed
+- [x] `lesson-writing/style-patterns.yaml` — already generic, no changes needed
 
 ### Phase 3: Documentation
 
-- [ ] Expand README "Knowledge Compounding" section with "Making It Yours" guidance
-- [ ] Create `docs/knowledge-compounding.md` — full guide: seed vs user data, how `/compound` works, how to reset, how to curate
-- [ ] Update README directory tree to show `knowledge/research/`
-- [ ] Update AGENTS.md directory structure
+- [x] Expand README "Knowledge Compounding" section with "Making It Yours" guidance
+- [x] Create `docs/knowledge-compounding.md` — full guide: seed vs user data, how `/compound` works, how to reset, how to curate
+- [x] Update README directory tree to show `knowledge/research/`
+- [x] Update AGENTS.md directory structure
 
 ## Success Metrics
 
