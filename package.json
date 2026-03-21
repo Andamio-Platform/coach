@@ -1,7 +1,7 @@
 {
   "name": "@andamio/coach",
   "version": "1.0.0",
-  "description": "AI-assisted course development with compounding skills — SLTs, lesson types, Fist to Five readiness assessment",
+  "description": "Build learning pathways for individuals, teams, and ecosystems",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -17,7 +17,12 @@
     "course-development",
     "slt",
     "education",
-    "compounding-skills"
+    "compounding-skills",
+    "collaboration",
+    "credentials",
+    "verifiable credentials",
+    "blockchain",
+    "curriculum design"
   ],
   "files": [
     "skills/**",
