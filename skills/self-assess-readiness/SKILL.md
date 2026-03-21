@@ -14,6 +14,13 @@ Evaluates your readiness to coach a learner through each Student Learning Target
 
 ## Instructions
 
+### Path Resolution
+
+Resolve file paths based on your execution context:
+
+- **Plugin context** (`${CLAUDE_PLUGIN_ROOT}` is set): Read knowledge from `${CLAUDE_PLUGIN_DATA}/knowledge/` (user data), falling back to `${CLAUDE_PLUGIN_ROOT}/knowledge/` (seed data). Read research from `${CLAUDE_PLUGIN_ROOT}/research/`.
+- **Clone/symlink context** (default): Read knowledge from `knowledge/` and research from `research/` relative to the project root.
+
 ### Pre-Execution Knowledge Check
 
 Before assessing readiness, read the knowledge base for calibration data that should adjust your confidence. **If any knowledge file does not exist, skip it and proceed without calibration data — use default confidence levels.**

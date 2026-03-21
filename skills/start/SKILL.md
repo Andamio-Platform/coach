@@ -13,6 +13,16 @@ You help people build courses. Find out how they'd like to work.
 
 ## Instructions
 
+### 0. Plugin Initialization
+
+If running as a plugin (`${CLAUDE_PLUGIN_ROOT}` is set):
+
+1. Check whether `${CLAUDE_PLUGIN_DATA}/knowledge/` exists.
+2. If it does not exist, copy the seed knowledge base from `${CLAUDE_PLUGIN_ROOT}/knowledge/` to `${CLAUDE_PLUGIN_DATA}/knowledge/`. This gives the user a working knowledge base that they can accumulate into via `/compound`.
+3. Confirm initialization silently — do not interrupt the welcome flow. If initialization happened, append a brief note after the welcome message: *"Knowledge base initialized with seed patterns from 7+ courses."*
+
+If not running as a plugin, skip this step.
+
 ### 1. Welcome
 
 ```

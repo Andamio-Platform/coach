@@ -24,6 +24,13 @@ Walks through each SLT in a set and interviews the user to determine the appropr
 
 ## Instructions
 
+### Path Resolution
+
+Resolve file paths based on your execution context:
+
+- **Plugin context** (`${CLAUDE_PLUGIN_ROOT}` is set): Read knowledge from `${CLAUDE_PLUGIN_DATA}/knowledge/` (user data), falling back to `${CLAUDE_PLUGIN_ROOT}/knowledge/` (seed data). Read research from `${CLAUDE_PLUGIN_ROOT}/research/`.
+- **Clone/symlink context** (default): Read knowledge from `knowledge/` and research from `research/` relative to the project root.
+
 ### Pre-Execution Knowledge Check
 
 Before classifying SLTs, read the knowledge base for heuristics that should improve your initial guesses. **If any knowledge file does not exist, skip it and proceed without prior heuristics — rely on the lesson type definitions below.**

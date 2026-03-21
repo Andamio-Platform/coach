@@ -14,6 +14,13 @@ Guides course development through a 11-phase workflow. Reads current status, sug
 
 ## Instructions
 
+### Path Resolution
+
+Resolve file paths based on your execution context:
+
+- **Plugin context** (`${CLAUDE_PLUGIN_ROOT}` is set): Read knowledge from `${CLAUDE_PLUGIN_DATA}/knowledge/` (user data), falling back to `${CLAUDE_PLUGIN_ROOT}/knowledge/` (seed data). Write knowledge to `${CLAUDE_PLUGIN_DATA}/knowledge/`.
+- **Clone/symlink context** (default): Read and write knowledge at `knowledge/` relative to the project root.
+
 ### 1. List Courses and Select
 
 First, scan `courses-in-progress/` for course directories. For each, read `00-course.md` to get title and status.

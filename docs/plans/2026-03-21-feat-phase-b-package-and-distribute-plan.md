@@ -283,10 +283,10 @@ The two platform-specific skills (`compile`, `andamio-cli`) already have `compat
 
 ### Phase B2: Knowledge Architecture
 
-- [ ] Update `/start` skill to detect plugin context and initialize `${CLAUDE_PLUGIN_DATA}/knowledge/` from seed data on first run
-- [ ] Update `/compound` skill to write to `${CLAUDE_PLUGIN_DATA}/knowledge/` when running as plugin
-- [ ] Update all skills with knowledge reads to use the seed → local fallback pattern
-- [ ] Add path resolution preamble to each skill's Pre-Execution Knowledge Check
+- [x] Update `/start` skill to detect plugin context and initialize `${CLAUDE_PLUGIN_DATA}/knowledge/` from seed data on first run
+- [x] Update `/compound` skill to write to `${CLAUDE_PLUGIN_DATA}/knowledge/` when running as plugin
+- [x] Update all skills with knowledge reads to use the seed → local fallback pattern
+- [x] Add path resolution preamble to each skill's Pre-Execution Knowledge Check
 - [ ] Test: fresh plugin install → `/start` → knowledge initialized → `/draft-slts` reads seed data
 - [ ] Test: `/compound` → knowledge written to persistent location → survives simulated update
 

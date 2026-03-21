@@ -15,6 +15,13 @@ Generates well-formed Student Learning Targets (SLTs) for a course or module bas
 
 ## Instructions
 
+### Path Resolution
+
+Resolve file paths based on your execution context:
+
+- **Plugin context** (`${CLAUDE_PLUGIN_ROOT}` is set): Read knowledge from `${CLAUDE_PLUGIN_DATA}/knowledge/` (user data), falling back to `${CLAUDE_PLUGIN_ROOT}/knowledge/` (seed data). Read research from `${CLAUDE_PLUGIN_ROOT}/research/`.
+- **Clone/symlink context** (default): Read knowledge from `knowledge/` and research from `research/` relative to the project root.
+
 ### Pre-Execution Knowledge Check
 
 Before drafting SLTs, read the knowledge base for patterns that should influence your work. **If any knowledge file does not exist, skip it and proceed without prior patterns — note "No prior data available" in output.**

@@ -24,6 +24,15 @@ Extracts patterns, heuristics, and calibration data from course development arti
 
 ## Instructions
 
+### Path Resolution
+
+Resolve file paths based on your execution context:
+
+- **Plugin context** (`${CLAUDE_PLUGIN_ROOT}` is set): Read knowledge from `${CLAUDE_PLUGIN_DATA}/knowledge/` (user data), falling back to `${CLAUDE_PLUGIN_ROOT}/knowledge/` (seed data). **Write all knowledge updates to `${CLAUDE_PLUGIN_DATA}/knowledge/`** — never modify the plugin's bundled seed data.
+- **Clone/symlink context** (default): Read and write knowledge at `knowledge/` relative to the project root.
+
+All `knowledge/` paths referenced below follow this resolution. In plugin context, substitute the appropriate prefix.
+
 ### Phase Selection
 
 If invoked without arguments, present phase options:
