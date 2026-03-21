@@ -53,27 +53,20 @@ Point your agent at the `skills/` directory to get started. See your agent's doc
 
 Each course you develop makes the system smarter for the next one:
 
-```
-Draft SLTs
-  ↓
-Assess
-  ↓
-Revise
-  ↓
-Classify
-  ↓
-Assess Readiness
-  ↓
-Build Lessons
-  ↓
-Compile
-  ↓
-Compound → knowledge/ (patterns, heuristics, calibration)
-  ↓
-Next course benefits from accumulated knowledge
-```
+| Step | Skill | What happens |
+|------|-------|-------------|
+| Draft SLTs | `draft-slts` | Generate learning targets from topic, audience, and goals |
+| Assess | `assess-slts` | Evaluate quality across 5 dimensions, suggest rewrites |
+| Revise | *(you + agent)* | Apply feedback, tighten SLT wording |
+| Classify | `classify-lesson-types` | Interview to assign each SLT a lesson type |
+| Assess Readiness | `self-assess-readiness` | Rate coaching confidence per SLT, build context shopping list |
+| Gather Context | `gather-screenshots` / `gather-code-examples` | Checklists for Product Demo and Developer Documentation inputs |
+| Build Lessons | *(you + agent)* | Write lessons using gathered context |
+| Compile | `compile` | Package modules into platform import format |
+| Compound | `compound` | Extract patterns into `knowledge/` — verb effectiveness, quality issues, calibration, heuristics |
+| **Next course** | | Every skill reads `knowledge/` before running. The loop tightens. |
 
-The `compound` skill extracts patterns from completed courses - verb effectiveness, quality issues, readiness calibration, lesson type heuristics - and writes them back to `knowledge/`. Every other skill reads from `knowledge/` before running. The loop tightens with each course.
+The `course-workflow` skill orchestrates this loop, tracking which phase you're in and suggesting the next step.
 
 ### Skills
 
@@ -88,16 +81,16 @@ The `compound` skill extracts patterns from completed courses - verb effectivene
 
 #### Course Development Skills
 
-| Skill | Purpose |
-|-------|---------|
-| `course-workflow` | Orchestrates the 12-phase workflow, tracks status, guides next steps |
-| `draft-slts` | Generates SLTs from topic, audience, and learning goals |
-| `assess-slts` | Evaluates SLT quality across 5 dimensions with rewrite suggestions |
-| `self-assess-readiness` | Evaluates coaching readiness per SLT |
-| `classify-lesson-types` | Interviews user to classify each SLT by lesson type |
-| `gather-screenshots` | Generates screenshot capture checklists for Product Demo lessons |
-| `gather-code-examples` | Generates code example checklists for Developer Documentation lessons |
-| `compound` | Extracts patterns from course artifacts to improve future runs |
+| Skill | Loop Step | Purpose |
+|-------|----------|---------|
+| `course-workflow` | All | Orchestrates the workflow, tracks status, guides next steps |
+| `draft-slts` | Draft SLTs | Generates SLTs from topic, audience, and learning goals |
+| `assess-slts` | Assess | Evaluates SLT quality across 5 dimensions with rewrite suggestions |
+| `self-assess-readiness` | Assess Readiness | Evaluates coaching readiness per SLT |
+| `classify-lesson-types` | Classify | Interviews user to classify each SLT by lesson type |
+| `gather-screenshots` | Gather Context | Screenshot capture checklists for Product Demo lessons |
+| `gather-code-examples` | Gather Context | Code example checklists for Developer Documentation lessons |
+| `compound` | Compound | Extracts patterns from course artifacts to improve future runs |
 
 ## Key Concepts
 
