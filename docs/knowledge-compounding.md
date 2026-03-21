@@ -86,13 +86,26 @@ If some seed patterns don't apply to your domain:
 - Keep the file structure intact — skills expect specific files to exist
 - Files that don't exist are handled gracefully (skills proceed without prior patterns)
 
-### Plugin users
+## Where Knowledge Lives
 
-When installed as a Claude Code plugin, knowledge works differently:
+Where your accumulated patterns are stored depends on how you installed Coach:
+
+| Installation | Knowledge location | Shared across projects? |
+|-------------|-------------------|------------------------|
+| **Clone into a project** | `./knowledge/` in the cloned repo | No — each project has its own |
+| **Symlink setup** (multi-repo) | Coach repo's `knowledge/` | Yes — all symlinked projects share one knowledge base |
+| **Claude Code plugin** | `~/.claude/plugins/data/{coach}/knowledge/` | Yes — all projects compound into one place |
+| **npm install** | `node_modules/@andamio/coach/knowledge/` (read-only) | No — compounding doesn't persist |
+
+**Plugin users:** Your knowledge is shared across every project you use Coach in. Patterns from one course improve every future course. This works well because the knowledge is domain-agnostic — verb effectiveness, quality issues, and lesson type heuristics apply regardless of subject matter.
+
+**Clone users who want shared knowledge:** Use the symlink setup (`scripts/setup-course-repo.sh`). All course repos symlink back to one Coach installation, so knowledge compounds across projects.
+
+**Clone users who want isolation:** Clone Coach into each project separately. Each project builds its own knowledge base from scratch.
+
+### Plugin details
 
 - **Seed data** lives at `${CLAUDE_PLUGIN_ROOT}/knowledge/` (immutable, replaced on update)
 - **Your data** lives at `${CLAUDE_PLUGIN_DATA}/knowledge/` (persistent, survives updates)
 - The `/start` skill initializes your data directory from seed data on first run
 - The `/compound` skill writes to your data directory, not the plugin's seed data
-
-Clone/symlink users are unaffected — `knowledge/` stays in the project directory as always.
