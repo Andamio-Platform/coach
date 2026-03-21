@@ -11,8 +11,6 @@ last_updated: null
 # - chosen: the selected lesson type
 # - deciding_factor: what determined the choice
 # - question_that_helped: the discriminating question that clarified
-# - course: which course this came from
-# - date: when captured
 
 edge_cases:
   - slt: "I can assess a contributor's assignment."
@@ -20,8 +18,6 @@ edge_cases:
     chosen: exploration
     deciding_factor: "The Accept/Refuse/Deny framework has deliberate design trade-offs (irreversibility gates, expiration requirements) that a project owner must internalize. Understanding WHY matters more than knowing WHERE to click."
     question_that_helped: "Does the learner need to understand WHY the system works this way, or just HOW to use it?"
-    course: "andamio-for-project-owners"
-    date: "2026-03-05"
 
 # Recurring ambiguity patterns
 ambiguity_patterns:
@@ -31,8 +27,6 @@ ambiguity_patterns:
     resolution_guidance:
       exploration: "Protocol has irreversible vs recoverable paths, expiration gates, or deliberate friction"
       product_demo: "Decision is straightforward — the UI guides the user, no judgment framework needed"
-    courses_seen_in: ["andamio-for-project-owners"]
-    date: "2026-03-05"
 # Each entry:
 # - pattern: description of the ambiguous situation
 # - candidates: the lesson types that could apply

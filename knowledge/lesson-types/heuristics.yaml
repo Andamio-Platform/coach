@@ -2,8 +2,8 @@
 # Patterns for classifying SLTs by lesson type
 # Used by /classify-lesson-types to improve initial guesses
 
-version: 1
-last_updated: "2026-02-27"
+version: 2
+last_updated: "2026-03-21"
 
 # Verb patterns: certain verbs strongly suggest certain lesson types
 verb_patterns:
@@ -13,175 +13,147 @@ verb_patterns:
     confidence: high
     count: 2
     examples: ["I can navigate the course catalog...", "I can navigate to lesson content..."]
-    courses_seen_in: ["andamio-for-contributors"]
   - verb: browse
     suggests: product_demo
     confidence: high
     count: 1
     examples: ["I can browse projects and identify..."]
-    courses_seen_in: ["andamio-for-contributors"]
   - verb: connect
     suggests: product_demo
     confidence: high
     count: 1
-    examples: ["I can connect a Cardano wallet..."]
-    courses_seen_in: ["andamio-for-contributors"]
+    examples: ["I can connect a wallet..."]
   - verb: mint
     suggests: product_demo
     confidence: high
     count: 1
-    examples: ["I can mint a portable Access Token..."]
-    courses_seen_in: ["andamio-for-contributors"]
+    examples: ["I can mint a portable access token..."]
   - verb: enroll
     suggests: product_demo
     confidence: high
     count: 1
     examples: ["I can enroll in a course by submitting..."]
-    courses_seen_in: ["andamio-for-contributors"]
   - verb: claim
     suggests: product_demo
     confidence: high
     count: 1
     examples: ["I can claim my credential after teacher approval."]
-    courses_seen_in: ["andamio-for-contributors"]
   - verb: commit
     suggests: product_demo
     confidence: high
     count: 1
     examples: ["I can commit to a project task..."]
-    courses_seen_in: ["andamio-for-contributors"]
   - verb: use
     suggests: product_demo
     confidence: high
     count: 1
     examples: ["I can use my credential to join a project..."]
-    courses_seen_in: ["andamio-for-contributors"]
   - verb: create
     suggests: product_demo
     confidence: high
     count: 2
-    examples: ["I can create a project on the Cardano blockchain.", "I can create a task with a reward amount and expiration date."]
-    courses_seen_in: ["andamio-for-project-owners"]
+    examples: ["I can create a project on the blockchain.", "I can create a task with a reward amount and expiration date."]
   - verb: configure
     suggests: product_demo
     confidence: high
     count: 1
     examples: ["I can configure course prerequisites for a project."]
-    courses_seen_in: ["andamio-for-project-owners"]
   - verb: fund
     suggests: product_demo
     confidence: high
     count: 1
     examples: ["I can fund the project treasury and publish tasks on-chain."]
-    courses_seen_in: ["andamio-for-project-owners"]
   - verb: publish
     suggests: product_demo
     confidence: high
     count: 1
     examples: ["I can fund the project treasury and publish tasks on-chain."]
-    courses_seen_in: ["andamio-for-project-owners"]
   - verb: remove
     suggests: product_demo
     confidence: high
     count: 1
-    examples: ["I can remove tasks from the treasury to reclaim ADA."]
-    courses_seen_in: ["andamio-for-project-owners"]
+    examples: ["I can remove tasks from the treasury to reclaim funds."]
   - verb: add
     suggests: product_demo
     confidence: high
     count: 1
     examples: ["I can add and remove project managers."]
-    courses_seen_in: ["andamio-for-project-owners"]
   - verb: monitor
     suggests: product_demo
     confidence: high
     count: 1
     examples: ["I can monitor contributor activity."]
-    courses_seen_in: ["andamio-for-project-owners"]
   - verb: generate
     suggests: product_demo
     confidence: high
     count: 1
     examples: ["I can generate and export a treasury report."]
-    courses_seen_in: ["andamio-for-project-owners"]
   - verb: export
     suggests: product_demo
     confidence: high
     count: 1
     examples: ["I can generate and export a treasury report."]
-    courses_seen_in: ["andamio-for-project-owners"]
   # Exploration verbs (conceptual understanding)
   - verb: compare
     suggests: exploration
     confidence: high
     count: 1
-    examples: ["I can compare a portable Andamio Access Token to a traditional platform account."]
-    courses_seen_in: ["andamio-for-contributors"]
+    examples: ["I can compare a portable access token to a traditional platform account."]
   - verb: describe
     suggests: exploration
     confidence: high
     count: 1
-    examples: ["I can describe how Andamio courses are structured."]
-    courses_seen_in: ["andamio-for-contributors"]
+    examples: ["I can describe how courses are structured."]
   - verb: find
     suggests: exploration
     confidence: medium
     count: 1
     notes: "Exploration when about conceptual 'what's next', Product Demo when about UI navigation"
     examples: ["I can find new opportunities for learning and contributing to projects."]
-    courses_seen_in: ["andamio-for-contributors"]
   # How To Guide verbs (terminal/config procedures)
   - verb: install
     suggests: how_to_guide
     confidence: high
     count: 1
     examples: ["I can install nostr-rs-relay and its dependencies on a Linux server."]
-    courses_seen_in: ["nostr-relay-operations"]
   - verb: run
     suggests: how_to_guide
     confidence: high
     count: 1
     examples: ["I can run nostr-rs-relay and verify it accepts WebSocket connections."]
-    courses_seen_in: ["nostr-relay-operations"]
   - verb: configure
     suggests: how_to_guide
     confidence: high
     count: 2
     notes: "How To Guide when interface is terminal/config files. Could be Product Demo when configuring via UI."
     examples: ["I can configure nostr-rs-relay settings for my use case.", "I can configure paid relay access or authentication requirements."]
-    courses_seen_in: ["nostr-relay-operations"]
   - verb: "set up"
     suggests: how_to_guide
     confidence: high
     count: 1
     examples: ["I can set up a reverse proxy with TLS so clients connect to the relay over a secure domain."]
-    courses_seen_in: ["nostr-relay-operations"]
   - verb: monitor
     suggests: how_to_guide
     confidence: high
     count: 1
     examples: ["I can monitor relay health and diagnose common issues."]
-    courses_seen_in: ["nostr-relay-operations"]
   - verb: update
     suggests: how_to_guide
     confidence: high
     count: 1
     examples: ["I can update nostr-rs-relay and apply configuration changes without extended downtime."]
-    courses_seen_in: ["nostr-relay-operations"]
   - verb: define
     suggests: exploration
     confidence: high
     count: 1
     notes: "Exploration when about policy/strategy thinking. The act of defining precedes implementing."
     examples: ["I can define a moderation policy for my relay."]
-    courses_seen_in: ["nostr-relay-operations"]
   - verb: assess
     suggests: exploration
     confidence: high
     count: 1
     notes: "Exploration when judgment behind the action matters more than the mechanics. 'Assess' implies evaluation — higher cognitive demand than clicking buttons."
     examples: ["I can assess a contributor's assignment."]
-    courses_seen_in: ["andamio-for-project-owners"]
 
 # Subject matter patterns: certain topics suggest certain lesson types
 subject_patterns:
@@ -189,88 +161,75 @@ subject_patterns:
     suggests: product_demo
     confidence: high
     count: 3
-    examples: ["I can connect a Cardano wallet...", "I can navigate the course catalog..."]
-    courses_seen_in: ["andamio-for-contributors"]
+    examples: ["I can connect a wallet...", "I can navigate the course catalog..."]
   - keywords: ["enrollment", "submission", "transaction", "on-chain"]
     suggests: product_demo
     confidence: high
     count: 4
     notes: "On-chain actions via UI are Product Demo"
     examples: ["I can enroll in a course by submitting...", "I can claim my credential..."]
-    courses_seen_in: ["andamio-for-contributors"]
   - keywords: ["ownership", "portability", "self-sovereign", "vs traditional"]
     suggests: exploration
     confidence: high
     count: 1
-    examples: ["I can compare a portable Andamio Access Token to a traditional platform account."]
-    courses_seen_in: ["andamio-for-contributors"]
+    examples: ["I can compare a portable access token to a traditional platform account."]
   - keywords: ["structure", "hierarchy", "why", "design"]
     suggests: exploration
     confidence: high
     count: 1
-    examples: ["I can describe how Andamio courses are structured."]
-    courses_seen_in: ["andamio-for-contributors"]
+    examples: ["I can describe how courses are structured."]
   - keywords: ["opportunities", "journey", "what's next", "skill gaps"]
     suggests: exploration
     confidence: high
     count: 1
     notes: "Reflective thinking about learning path"
     examples: ["I can find new opportunities for learning and contributing to projects."]
-    courses_seen_in: ["andamio-for-contributors"]
   - keywords: ["install", "dependencies", "build", "compile", "server"]
     suggests: how_to_guide
     confidence: high
     count: 2
     notes: "Server/infrastructure setup via terminal"
     examples: ["I can install nostr-rs-relay and its dependencies on a Linux server.", "I can run nostr-rs-relay and verify it accepts WebSocket connections."]
-    courses_seen_in: ["nostr-relay-operations"]
   - keywords: ["config", "settings", "TLS", "reverse proxy", "nginx", "certificate"]
     suggests: how_to_guide
     confidence: high
     count: 2
     notes: "Configuration files and infrastructure setup"
     examples: ["I can configure nostr-rs-relay settings for my use case.", "I can set up a reverse proxy with TLS..."]
-    courses_seen_in: ["nostr-relay-operations"]
   - keywords: ["monitor", "logs", "health", "update", "maintain", "downtime"]
     suggests: how_to_guide
     confidence: high
     count: 2
     notes: "Operations and maintenance tasks"
     examples: ["I can monitor relay health and diagnose common issues.", "I can update nostr-rs-relay..."]
-    courses_seen_in: ["nostr-relay-operations"]
   - keywords: ["policy", "moderation", "philosophy", "trade-offs"]
     suggests: exploration
     confidence: high
     count: 1
     notes: "Policy definition is conceptual thinking, not procedural"
     examples: ["I can define a moderation policy for my relay."]
-    courses_seen_in: ["nostr-relay-operations"]
   - keywords: ["protocol", "architecture", "client-relay", "relay implementations"]
     suggests: exploration
     confidence: high
     count: 2
     notes: "Protocol concepts and technical comparisons"
     examples: ["I can describe how a Nostr relay fits into the client-relay architecture.", "I can compare nostr-rs-relay to other relay implementations."]
-    courses_seen_in: ["nostr-relay-operations"]
   - keywords: ["treasury", "tasks", "reward", "fund", "publish"]
     suggests: product_demo
     confidence: high
     count: 3
     examples: ["I can create a task with a reward amount...", "I can fund the project treasury...", "I can remove tasks from the treasury..."]
-    courses_seen_in: ["andamio-for-project-owners"]
   - keywords: ["managers", "team", "contributor activity", "reports"]
     suggests: product_demo
     confidence: high
     count: 3
     examples: ["I can add and remove project managers.", "I can monitor contributor activity.", "I can generate and export a treasury report."]
-    courses_seen_in: ["andamio-for-project-owners"]
   - keywords: ["assess", "irreversible", "consequences", "accept", "refuse", "deny"]
     suggests: exploration
     confidence: high
     count: 1
     notes: "When the protocol deliberately designs different consequence levels, understanding the framework IS the skill"
     examples: ["I can assess a contributor's assignment."]
-    courses_seen_in: ["andamio-for-project-owners"]
 
 # Combination patterns: verb + subject combinations
 combination_patterns: []
@@ -281,28 +240,20 @@ combination_patterns: []
 # - confidence: high, medium, low
 # - count: times this pattern held
 
-# Key insight from andamio-for-contributors classification
+# Key insight from classification experience
 meta_heuristics:
   practical_vs_conceptual:
     description: "For intro courses, practical skills (navigate, click, submit) → Product Demo; conceptual understanding (compare, describe, reflect) → Exploration"
     confidence: high
-    courses_seen_in: ["andamio-for-contributors"]
-    date: "2026-02-27"
   interface_determines_type:
     description: "The primary interface determines whether practical SLTs become Product Demo or How To Guide. UI-driven courses → Product Demo. Terminal/config-driven courses → How To Guide. The verb alone is not enough — 'configure' is How To Guide for terminal work but could be Product Demo for UI settings."
     confidence: high
-    courses_seen_in: ["andamio-for-contributors", "nostr-relay-operations"]
-    date: "2026-03-01"
   define_before_configure:
     description: "SLTs that ask learners to 'define' a policy or strategy before implementing it are Exploration, even in procedural courses. The thinking precedes the doing."
     confidence: high
-    courses_seen_in: ["nostr-relay-operations"]
-    date: "2026-03-01"
   why_vs_how:
     description: "When an SLT could be Product Demo or Exploration, ask: 'Does the learner need to understand WHY the system works this way, or just HOW to use it?' If the protocol's design rationale is part of the capability, it's Exploration."
     confidence: high
-    courses_seen_in: ["andamio-for-project-owners"]
-    date: "2026-03-05"
 
 # Lesson type definitions for quick reference
 lesson_types:

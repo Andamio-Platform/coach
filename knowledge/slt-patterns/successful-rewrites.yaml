@@ -3,120 +3,85 @@
 # Used by /assess-slts to suggest proven fixes
 
 version: 1
-last_updated: "2026-02-27"
 
 # Each rewrite includes:
 # - before: original SLT text
 # - after: improved SLT text
 # - issue_type: which quality issue was fixed
 # - key_change: what made the difference
-# - course: which course this came from
-# - date: when captured
 
 rewrites:
-  - before: "I can compare a portable Andamio Access Token to a traditional platform account by identifying at least two differences in ownership, portability, and revocability."
-    after: "I can compare a portable Andamio Access Token to a traditional platform account."
+  - before: "I can compare a portable access token to a traditional platform account by identifying at least two differences in ownership, portability, and revocability."
+    after: "I can compare a portable access token to a traditional platform account."
     issue_type: how_clause
     key_change: "Removed 'by identifying...' clause - assessment method belongs in assignment criteria, not SLT"
-    course: "andamio-for-contributors"
-    date: "2026-02-27"
 
   - before: "I can navigate the course catalog and identify key course metadata (status, modules, credential)."
     after: "I can navigate the course catalog and identify key course metadata."
     issue_type: parenthetical_prescription
     key_change: "Removed parenthetical list - specific items belong in lesson/assignment, not SLT"
-    course: "andamio-for-contributors"
-    date: "2026-02-27"
 
-  - before: "I can describe how Andamio courses are structured (Course → Module → SLTs → Lessons → Assignment → Credential)."
-    after: "I can describe how Andamio courses are structured."
+  - before: "I can describe how courses are structured (Course → Module → SLTs → Lessons → Assignment → Credential)."
+    after: "I can describe how courses are structured."
     issue_type: parenthetical_prescription
     key_change: "Removed parenthetical hierarchy - structure details belong in lesson content"
-    course: "andamio-for-contributors"
-    date: "2026-02-27"
 
   - before: "I can claim my credential after teacher approval and explain what makes it verifiable."
     after: "I can claim my credential after teacher approval."
     issue_type: dual_capability
     key_change: "Removed second capability - 'explain what makes it verifiable' could be separate SLT or lesson objective"
-    course: "andamio-for-contributors"
-    date: "2026-02-27"
 
-  # Course Creators rewrites
-  - before: "I can navigate to the Andamio Studio and identify its key sections (courses, projects)."
-    after: "I can navigate to the Andamio Studio and identify its key sections."
+  - before: "I can navigate to the admin dashboard and identify its key sections (courses, projects)."
+    after: "I can navigate to the admin dashboard and identify its key sections."
     issue_type: parenthetical_prescription
     key_change: "Removed parenthetical list - specific sections belong in lesson content"
-    course: "andamio-for-course-creators"
-    date: "2026-02-27"
 
   - before: "I can write effective Student Learning Targets using the formula: measurable verb + specific outcome + observable evidence."
     after: "I can write effective Student Learning Targets."
     issue_type: how_clause
     key_change: "Removed formula prescription - the method belongs in lesson content, SLT just states the capability"
-    course: "andamio-for-course-creators"
-    date: "2026-02-27"
 
   - before: "I can create lesson content using the Tiptap rich text editor including text, formatting, and media."
     after: "I can create lesson content using the Tiptap rich text editor."
     issue_type: list_prescription
     key_change: "Removed 'including X, Y, Z' - content types belong in lesson, not SLT"
-    course: "andamio-for-course-creators"
-    date: "2026-02-27"
 
   - before: "I can add at least one teacher to a course."
     after: "I can add a teacher to a course."
     issue_type: quantity_prescription
     key_change: "Removed 'at least one' - quantity belongs in assignment criteria, not SLT"
-    course: "andamio-for-course-creators"
-    date: "2026-02-27"
 
   - before: "I can explain the assignment review workflow: submit > review > accept/revise > credential claim."
     after: "I can explain the assignment review workflow."
     issue_type: parenthetical_prescription
     key_change: "Removed inline steps after colon - workflow details belong in lesson content"
-    course: "andamio-for-course-creators"
-    date: "2026-02-27"
 
   - before: "I can create at least one task definition with description and requirements."
     after: "I can create a task definition for a project."
     issue_type: quantity_prescription
     key_change: "Removed 'at least one' and 'with X and Y' - double prescription cleaned up"
-    course: "andamio-for-course-creators"
-    date: "2026-02-27"
 
   - before: "I can explain the contributor assessment workflow and how treasury payouts work."
     after: "I can explain the contributor assessment workflow."
     issue_type: dual_capability
     key_change: "Removed second topic - 'how treasury payouts work' could be separate SLT if needed"
-    course: "andamio-for-course-creators"
-    date: "2026-02-27"
 
-  # Nostr Relay Operations rewrites
   - before: "I can compare nostr-rs-relay to other relay implementations and explain why you might choose it."
     after: "I can compare nostr-rs-relay to other relay implementations."
     issue_type: dual_capability
     key_change: "Removed 'and explain why' — comparison already implies reasoning about trade-offs"
-    course: "nostr-relay-operations"
-    date: "2026-03-01"
 
   - before: "I can configure nostr-rs-relay settings for storage, limits, and access policies."
     after: "I can configure nostr-rs-relay settings for my use case."
     issue_type: inline_list
     key_change: "Replaced inline list with 'for my use case' — specific settings belong in lesson"
-    course: "nostr-relay-operations"
-    date: "2026-03-01"
 
   - before: "I can define a moderation policy for my relay using allow lists, deny lists, or NIP-based filtering."
     after: "I can define a moderation policy for my relay."
     issue_type: inline_list
     key_change: "Removed mechanism list — specific filtering approaches belong in lesson"
-    course: "nostr-relay-operations"
-    date: "2026-03-01"
 
   - before: "I can monitor relay health using logs, metrics, and connection status."
     after: "I can monitor relay health and diagnose common issues."
     issue_type: inline_list
     key_change: "Replaced list with actual skill ('diagnose common issues') — stronger learning outcome"
-    course: "nostr-relay-operations"
-    date: "2026-03-01"

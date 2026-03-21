@@ -1,5 +1,5 @@
 # Import Gotchas
-# Issues discovered when uploading compiled modules to Andamio Studio
+# Issues discovered when compiling and importing lesson modules
 # Used by /compile to validate output before upload
 # Updated by /compound skill
 
@@ -12,112 +12,27 @@ last_updated: "2026-03-16"
 # - cause: why it happens
 # - detection: how /compile can check for this
 # - fix: what to do
-# - course: where this was discovered
-# - date: when captured
 
 gotchas:
 
   - id: placeholder-lesson-skipped
     issue: "Importer skips minimal/placeholder lesson files and re-indexes remaining lessons sequentially against SLTs"
-    cause: "lesson-1.md had trivial content ('Empty Lesson OK'). The importer treated it as empty, so lesson-2.md mapped to SLT 1 and lesson-3.md mapped to SLT 2, leaving SLT 3 with no lesson."
+    cause: "A lesson file had trivial content ('Empty Lesson OK'). The importer treated it as empty, so subsequent lessons mapped to the wrong SLTs, leaving the final SLT with no lesson."
     detection: "Check that every lesson-N.md has substantive content (at minimum an H1 heading and one paragraph). Flag any file under ~50 bytes or without a markdown heading."
     fix: "Either write real content for every lesson slot, or remove the file entirely and accept the gap — don't use placeholder files."
     severity: critical
-    course: "aiken-project-based-learning"
-    date: "2026-03-16"
-
-  - id: assignment-format-mismatch
-    issue: "Assignment content not recognized by importer when using non-standard headings"
-    cause: "assignment.md used informal headings ('## Important Stuff', '## Neat Stuff', '## Tough Stuff') instead of the expected '# Module Assignment' / '## Task' / '## Deliverables' structure."
-    detection: "Validate that assignment.md starts with '# Module Assignment' and contains '## Task' and '## Deliverables' headings."
-    fix: "Restructure to match the import format guide: # Module Assignment → ## Task → ## Deliverables → ## Notes (optional)."
-    severity: medium
-    course: "aiken-project-based-learning"
-    date: "2026-03-16"
-
-  - id: slt-prefix-preservation
-    issue: "SLTs in outline.md must match on-chain text exactly — do not strip prefixes"
-    cause: "/compile skill previously instructed to strip 'I can ' prefix from SLTs. The actual importer uses the text as-is for the learning target. Stripping the prefix would create a mismatch with on-chain SLTs."
-    detection: "Compare outline.md SLT text to source SLTs in 01-slts.md or 00-course.md. They must be identical."
-    fix: "Preserve SLT text exactly as written. The /compile skill has been updated to reflect this."
-    severity: critical
-    course: "aiken-project-based-learning"
-    date: "2026-03-16"
-
-  - id: code-format-flexibility
-    issue: "Module code can be a slug string, not just a 3-digit number"
-    cause: "/compile skill previously stated code must be a '3-digit number'. The actual import format supports any unique string identifier (e.g., 'intro-cardano')."
-    detection: "No validation needed — just don't reject non-numeric codes."
-    fix: "Accept both numeric codes (101, 201) and slug codes (intro-cardano, wallet-setup). The /compile skill has been updated."
-    severity: low
-    course: "aiken-project-based-learning"
-    date: "2026-03-16"
-
-  - id: outline-no-h1
-    issue: "outline.md should NOT have an H1 heading — title comes from YAML frontmatter only"
-    cause: "/compile skill previously instructed to include '# [Module Title]' after frontmatter. The import format guide shows outline.md starts directly with '## SLTs' after frontmatter. The H1 is ignored but adds confusion."
-    detection: "Check that outline.md has no H1 heading between frontmatter and '## SLTs'."
-    fix: "Remove any '# Title' line from outline.md. Module title is set by YAML `title:` field."
-    severity: medium
-    course: "andamio-for-contributors"
-    date: "2026-03-16"
 
   - id: lesson-h1-required
-    issue: "Lesson files must have an H1 heading — it becomes the lesson title in the app"
-    cause: "/compile skill previously instructed to strip H1 headings from lessons ('the import system uses outline.md for titles'). This is wrong — the CLI extracts the first H1 as the lesson title field. Without it, lessons import with blank titles."
+    issue: "Lesson files must have an H1 heading — it becomes the lesson title in the platform"
+    cause: "Lesson files without an H1 heading import with blank titles. The importer extracts the first H1 as the lesson title field."
     detection: "Check that every lesson-N.md starts with an '# H1 Title' heading."
-    fix: "Add a short, descriptive H1 title to every lesson file (e.g., '# Connect a Cardano Wallet'). Don't use the 'Lesson X.Y:' prefix format — just a clean title."
+    fix: "Add a short, descriptive H1 title to every lesson file. Don't use the 'Lesson X.Y:' prefix format — just a clean title."
     severity: critical
-    course: "andamio-for-contributors"
-    date: "2026-03-16"
-
-  - id: slt-creation-requires-omit-index
-    issue: "CLI import cannot create SLTs on new modules — API requires slt_index to be omitted for creation"
-    cause: "The CLI always sends slt_index in the payload, which the API interprets as 'update existing SLT at this index.' For brand-new modules with no SLTs, the API silently does nothing (slts_created: 0). SLTs must be created via a direct API call with slt_index omitted."
-    detection: "After importing to a new module, check that slts_created > 0 in the response. If 0, SLTs need manual creation first."
-    fix: "Before CLI import, create SLTs via direct API call: POST /v2/course/teacher/course-module/update with slts array where each entry has only slt_text (no slt_index). Then run CLI import for lessons/assignment."
-    severity: critical
-    course: "andamio-for-contributors"
-    date: "2026-03-16"
-
-  - id: module-create-flat-body
-    issue: "Module create API requires flat JSON body, not nested under 'content' wrapper"
-    cause: "OpenAPI spec shows CreateModuleRequest with a 'content' field wrapping ModuleContentInput. But the actual API expects course_id, course_module_code, title, and sort_order at the top level. Using the nested format returns 'course_id, course_module_code, and title are required'."
-    detection: "If module create returns BAD_REQUEST about missing required fields, check body format."
-    fix: "Send flat body: {\"course_id\": \"...\", \"course_module_code\": \"...\", \"title\": \"...\", \"sort_order\": N}. Do NOT wrap in {\"content\": {...}}."
-    severity: medium
-    course: "andamio-for-contributors"
-    date: "2026-03-16"
-
-  - id: orphan-image-manifest-entries
-    issue: "Image manifest entries for files that don't exist or aren't referenced cause import warnings"
-    cause: "Test images were added and removed but manifest entries persisted. Also, filename with spaces ('Pasted image 20260316132604 1.png') violates best practices."
-    detection: "Cross-reference .image-manifest.json entries against actual files in assets/ and against image references in all lesson/assignment markdown files."
-    fix: "Remove manifest entries for files that don't exist. Remove files that aren't referenced by any markdown. Use lowercase filenames without spaces."
-    severity: low
-    course: "aiken-project-based-learning"
-    date: "2026-03-16"
 
 # Validation checklist for /compile
 # Run these checks before declaring a module ready for upload
 validation_checklist:
   - check: "Every lesson-N.md has substantive content (H1 + paragraph minimum)"
     prevents: placeholder-lesson-skipped
-  - check: "assignment.md uses # Module Assignment / ## Task / ## Deliverables structure"
-    prevents: assignment-format-mismatch
-  - check: "outline.md SLT text matches source exactly (no prefix stripping)"
-    prevents: slt-prefix-preservation
-  - check: "All .image-manifest.json entries have corresponding files in assets/"
-    prevents: orphan-image-manifest-entries
-  - check: "All image references in markdown have corresponding files in assets/"
-    prevents: orphan-image-manifest-entries
-  - check: "No image filenames contain spaces or uppercase letters"
-    prevents: orphan-image-manifest-entries
-  - check: "outline.md has no H1 heading between frontmatter and ## SLTs"
-    prevents: outline-no-h1
   - check: "Every lesson-N.md starts with an # H1 Title heading"
     prevents: lesson-h1-required
-  - check: "When importing to new modules, create SLTs via API first (omit slt_index)"
-    prevents: slt-creation-requires-omit-index
-  - check: "Module create API uses flat body (not nested under 'content')"
-    prevents: module-create-flat-body

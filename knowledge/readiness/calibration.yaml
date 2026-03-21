@@ -11,323 +11,43 @@ last_updated: "2026-03-06"
 # - actual_outcome: success, partial, failure
 # - dimensions_off: which dimensions were miscalibrated
 # - notes: what was learned
-# - date: when observed
 
 entries:
-  # --- andamio-for-contributors: Exploration SLTs (self-assessed Ready) ---
-
-  - slt_id: "contributors:1.1"
+  # Ready / success — simple case, no corrections needed
+  - slt_id: "course:1.1"
     self_assessed: "Ready"
     actual_outcome: success
     dimensions_off: []
-    notes: "Exploration lesson on ownership models. Built without screenshots or corrections. User gave feedback on sentence rhythm (tricolon pattern, lulling short sentences) and privacy framing (don't claim zero-knowledge, use 'selective disclosure'). These were style issues, not knowledge gaps — self-assessment was accurate."
-    date: "2026-02-27"
+    notes: "Exploration lesson on well-documented concept. Built from existing knowledge without external context. User gave style feedback (sentence rhythm, word choice) but no knowledge corrections — self-assessment was accurate."
 
-  - slt_id: "contributors:2.2"
-    self_assessed: "Ready"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "Exploration lesson on course structure hierarchy. Built from protocol knowledge without screenshots. No significant corrections needed. The structure (Course → Module → SLT → Lesson → Assignment → Credential) was accurate."
-    date: "2026-02-27"
-
-  - slt_id: "contributors:4.4"
-    self_assessed: "Ready"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "Exploration lesson on contribution loop and finding next steps. Built without screenshots. Reflective and open-ended by design (beachball SLT). No corrections needed."
-    date: "2026-02-28"
-
-  # --- andamio-for-contributors: Product Demo SLTs (self-assessed Needs Context) ---
-
-  - slt_id: "contributors:1.2"
-    self_assessed: "Needs Context"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "Screenshots provided context. Original lesson was minimal (1 screenshot); user later clarified the new wallet-connect screenshots belong in 1.3 (login after minting), not 1.2. Self-assessment was correct — needed screenshots to write well."
-    date: "2026-02-28"
-
-  - slt_id: "contributors:1.3"
-    self_assessed: "Needs Context"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "6 minting screenshots + 3 login screenshots provided full context. Added 'Logging In Next Time' section based on user clarification that wallet-connect screenshots show post-mint login flow."
-    date: "2026-02-28"
-
-  - slt_id: "contributors:2.1"
-    self_assessed: "Needs Context"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "3 catalog screenshots were sufficient. User feedback caught em-dash flourishes and route-path-only patterns — style issues, not knowledge gaps."
-    date: "2026-02-27"
-
-  - slt_id: "contributors:2.3"
-    self_assessed: "Needs Context"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "3 project catalog screenshots were sufficient. Lesson written with minimal revision."
-    date: "2026-02-27"
-
-  - slt_id: "contributors:3.1"
+  # Needs Context / success with dimensions_off — shows miscalibration detection
+  - slt_id: "course:3.1"
     self_assessed: "Needs Context"
     actual_outcome: success
     dimensions_off:
       - "Conceptual was actually Weak — assumed enrollment required to view lessons"
-    notes: "User corrected key misconception: lessons are PUBLIC, no enrollment needed. Readiness assessment said 'Must be enrolled in a module to see lesson content' — wrong. Also clarified three-part module structure (SLTs, optional lessons, assignment). 4 screenshots provided."
-    date: "2026-02-28"
+    notes: "User corrected key misconception: lessons are public, no enrollment needed. Readiness assessment claimed restricted access — wrong. Screenshots provided sufficient context to complete the lesson, but a dimension was miscalibrated."
 
-  - slt_id: "contributors:3.2"
-    self_assessed: "Needs Context"
-    actual_outcome: success
-    dimensions_off:
-      - "Conceptual was actually Weak — assumed separate enrollment step exists"
-    notes: "User corrected key misconception: there is no 'Enroll' button. Enrollment happens when first assignment commitment is submitted on-chain. Also learned: two-phase submission (Lock My Work → Submit Assignment), deposit included in first commitment (returned when credential claimed), subsequent assignments have minimal tx fee. 6 screenshots provided."
-    date: "2026-02-28"
-
-  # --- andamio-for-project-owners — all 10 SLTs ---
-  - slt_id: "project-owners:1.1"
-    self_assessed: "Needs Context"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "Context resolved gap exactly as predicted. Screenshots of project creation form + user insight about three prerequisite states made lesson complete."
-    date: "2026-03-05"
-  - slt_id: "project-owners:1.2"
-    self_assessed: "Needs Context"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "Context revealed more nuance than expected — three states (no courses, not public, available) instead of two. User's domain knowledge was key."
-    date: "2026-03-05"
-  - slt_id: "project-owners:1.3"
-    self_assessed: "Ready"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "Full source documentation made this straightforward."
-    date: "2026-03-05"
-  - slt_id: "project-owners:2.1"
-    self_assessed: "Ready"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "Complete guide with form screenshots. Added well-written task example screenshot during audit."
-    date: "2026-03-05"
-  - slt_id: "project-owners:2.2"
-    self_assessed: "Ready"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "Six screenshots, treasury math fully documented."
-    date: "2026-03-05"
-  - slt_id: "project-owners:2.3"
-    self_assessed: "Ready"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "Added live tasks table screenshot during audit to show task states before removal."
-    date: "2026-03-05"
-  - slt_id: "project-owners:3.1"
-    self_assessed: "Ready"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "Exploration lesson was strong. Screenshot audit identified 3 unused assessment screenshots from task-management/ that grounded the conceptual framework — added decision buttons, accepted state, and managers tab with pending review."
-    date: "2026-03-05"
-  - slt_id: "project-owners:3.2"
-    self_assessed: "Ready"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "Complete flow documented with 5 screenshots."
-    date: "2026-03-05"
-  - slt_id: "project-owners:3.3"
-    self_assessed: "Ready"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "Added Managers tab navigation screenshot during audit."
-    date: "2026-03-05"
-  - slt_id: "project-owners:3.4"
-    self_assessed: "Ready"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "Six screenshots covering full Reports tab. Most thorough lesson in the course."
-    date: "2026-03-05"
-
-  # --- nostr-relay-operations: Exploration SLTs (self-assessed Ready) ---
-
-  - slt_id: "nostr-relay:1.1"
-    self_assessed: "Ready"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "Exploration lesson on relay architecture. Built from protocol knowledge. Nostr is well-documented and stable — no corrections needed."
-    date: "2026-03-01"
-
-  - slt_id: "nostr-relay:1.2"
-    self_assessed: "Ready"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "Exploration lesson comparing relay implementations (strfry, nostr-rs-relay, nostream). Well-known landscape, no corrections needed."
-    date: "2026-03-01"
-
-  - slt_id: "nostr-relay:4.1"
-    self_assessed: "Ready"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "Exploration lesson on moderation policy. Conceptual exercise — no external context needed. Policy spectrum (open → curated → paid → private) is well-understood."
-    date: "2026-03-01"
-
-  # --- nostr-relay-operations: How To Guide SLTs (self-assessed Needs Context) ---
-
-  - slt_id: "nostr-relay:2.1"
-    self_assessed: "Needs Context"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "README confirmed exact Ubuntu deps (build-essential cmake protobuf-compiler pkg-config libssl-dev). Self-assessment was accurate."
-    date: "2026-03-01"
-
-  - slt_id: "nostr-relay:2.2"
-    self_assessed: "Needs Context"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "README confirmed default port 8080, RUST_LOG command, and websocat verification. Self-assessment was accurate."
-    date: "2026-03-01"
-
-  - slt_id: "nostr-relay:3.1"
-    self_assessed: "Needs Context"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "config.toml provided all exact key names and defaults. Every config section documented. Self-assessment was accurate."
-    date: "2026-03-01"
-
-  - slt_id: "nostr-relay:3.2"
-    self_assessed: "Needs Context"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "Repo's reverse-proxy.md provided tested nginx config with WebSocket headers. Added home-network specifics (port forwarding, dynamic DNS) from general knowledge. Used nginx over Caddy for consistency with repo docs."
-    date: "2026-03-01"
-
-  - slt_id: "nostr-relay:4.2"
-    self_assessed: "Needs Context"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "config.toml confirmed NIP-42 support (nip42_auth, nip42_dms), pubkey_whitelist, verified_users section, and full pay_to_relay section with CLN/LNBits options. More complete than expected."
-    date: "2026-03-01"
-
-  - slt_id: "nostr-relay:5.1"
-    self_assessed: "Needs Context"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "config.toml confirmed [logging] section with folder_path and file_prefix. Combined with general sysadmin knowledge for systemd, htop, ss, sqlite3 diagnostics. Self-assessment was accurate."
-    date: "2026-03-01"
-
-  - slt_id: "nostr-relay:5.2"
-    self_assessed: "Needs Context"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "Standard git pull + cargo build + systemctl restart workflow. README confirmed build command. SQLite backup is straightforward (single file). Self-assessment was accurate."
-    date: "2026-03-01"
-
-# Aggregate calibration stats
-stats:
-  total_entries: 41  # 19 prior + 12 api-developers + 10 project-owners
-  ready_assessed: 16  # 3 contributors + 3 nostr-relay + 8 project-owners + 2 api-developers
-  ready_correct: 16   # all Ready SLTs built successfully
-  needs_context_assessed: 25  # 6 contributors + 7 nostr-relay + 2 project-owners + 10 api-developers
-  needs_context_correct: 25   # tier was correct
-  accuracy_rate: 100  # tier-level accuracy maintained
-  dimension_accuracy_rate: 90  # combined dimension accuracy
-  common_overconfidence:
-    - "Conceptual dimension for Product Demo SLTs — rated Partial but was actually Weak for contributors 3.1 and 3.2 due to incorrect assumptions about platform behavior"
-  common_underconfidence: []
-  notes: "29 entries across 3 courses. All tier-level assessments correct. project-owners batch (8 Ready, 2 Needs Context) had zero miscalibrations. Screenshot audit after lesson writing can upgrade Ready lessons."
-
-  # API Developer course insights
-  api_developers_insights:
-    - "Code Demo predictions for endpoint-specific SLTs (101.2, 104.2) were accurate — confabulation risk was real"
-    - "Template codebase access (via file system) served as effective context for 7/10 Needs Context SLTs"
-    - "Audit step was critical for catching wrong endpoint paths before compilation"
-    - "Product Demo SLT (102.2) calibration adjustment was correct — incomplete without screenshots"
-
-# --- Andamio for API Developers: 100-Level (12 SLTs) ---
-
-  - slt_id: "api-developers:101.1"
-    self_assessed: "Needs Context"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "Built minimal accurate lesson about API key setup. General Gateway knowledge + 'less is more' approach worked. No corrections needed."
-    date: "2026-03-06"
-
-  - slt_id: "api-developers:101.2"
+  # Needs Context / partial — self-assessment caught a real gap
+  - slt_id: "course:4.2"
     self_assessed: "Needs Context"
     actual_outcome: partial
     dimensions_off:
       - "Code Demo was Weak as predicted — guessed wrong endpoint paths"
-    notes: "Initially guessed '/api/v2/course/list' but actual endpoint is '/api/v2/course/user/courses/list'. Audit against template repo was critical. Self-assessment correctly flagged this as high confabulation risk."
-    date: "2026-03-06"
+    notes: "Initially guessed plausible but incorrect API endpoint paths. Audit against actual codebase was critical. Self-assessment correctly flagged this as high confabulation risk, but the gap was deeper than expected."
 
-  - slt_id: "api-developers:101.3"
-    self_assessed: "Ready"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "Standard auth concepts (API key vs user auth). Built without external context. Self-assessment was accurate."
-    date: "2026-03-06"
-
-  - slt_id: "api-developers:102.1"
-    self_assessed: "Needs Context"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "Template README access + general Next.js knowledge was sufficient. Minimal lesson with accurate .env setup."
-    date: "2026-03-06"
-
-  - slt_id: "api-developers:102.2"
-    self_assessed: "Needs Context"
-    actual_outcome: partial
-    dimensions_off:
-      - "Conceptual was Weak as predicted (calibration adjustment applied)"
-    notes: "Wrote minimal lesson but missing actual screenshots. 'Screenshots coming soon' placeholder. Calibration adjustment to assume Conceptual=Weak for Product Demo was correct."
-    date: "2026-03-06"
-
-  - slt_id: "api-developers:102.3"
-    self_assessed: "Needs Context"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "Template codebase access via file system provided accurate directory structure. Key files and patterns documented correctly."
-    date: "2026-03-06"
-
-  - slt_id: "api-developers:103.1"
-    self_assessed: "Needs Context"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "CIP-30 wallet connection knowledge + Access Token policy ID from template. Code example accurate based on template reference."
-    date: "2026-03-06"
-
-  - slt_id: "api-developers:103.2"
-    self_assessed: "Needs Context"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "Challenge-sign-verify flow documented from template auth code. Endpoints verified against template hooks."
-    date: "2026-03-06"
-
-  - slt_id: "api-developers:103.3"
-    self_assessed: "Ready"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "Standard JWT patterns. isJWTExpired(), localStorage, logout. No external context needed."
-    date: "2026-03-06"
-
-  - slt_id: "api-developers:104.1"
-    self_assessed: "Needs Context"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "6-step lifecycle (BUILD→SIGN→SUBMIT→REGISTER→CONFIRM→UPDATE) confirmed from template. Transaction types verified from transaction-ui.ts."
-    date: "2026-03-06"
-
-  - slt_id: "api-developers:104.2"
-    self_assessed: "Needs Context"
-    actual_outcome: partial
-    dimensions_off:
-      - "Code Demo was Weak as predicted — guessed wrong transaction endpoint path"
-    notes: "Initially wrote '/tx/course/commit' but actual endpoint is '/tx/course/student/assignment/commit'. Audit was critical. Self-assessment correctly flagged this as high confabulation risk."
-    date: "2026-03-06"
-
-  - slt_id: "api-developers:104.3"
-    self_assessed: "Needs Context"
-    actual_outcome: success
-    dimensions_off: []
-    notes: "General error handling patterns (UTxO contention, user rejection, retry logic) are Cardano-universal. Andamio-specific error codes were generic enough to be correct."
-    date: "2026-03-06"
+# Aggregate calibration stats
+stats:
+  total_entries: 3
+  ready_assessed: 1
+  ready_correct: 1
+  needs_context_assessed: 2
+  needs_context_correct: 2
+  accuracy_rate: 100
+  dimension_accuracy_rate: 67  # 1 of 3 entries had dimension miscalibration
+  common_overconfidence:
+    - "Conceptual dimension for Product Demo SLTs — rated Partial but was actually Weak due to incorrect assumptions about platform behavior"
+  common_underconfidence: []
 
 # Calibration adjustments
 adjustments:
@@ -337,18 +57,12 @@ adjustments:
     - "Exploration SLTs on well-documented concepts (ownership models, protocol architecture) reliably self-assess as Ready. These are safe to build first."
     - "Style feedback (em-dash patterns, route-path formatting) is orthogonal to readiness. Don't conflate writing style corrections with knowledge gaps."
     - "For How To Guide SLTs on well-documented open source projects, GitHub README + config file reference is usually sufficient context. Fetch these first — they unlock the most SLTs per resource."
-    - "Exploration SLTs on well-documented protocols (Nostr, Cardano, etc.) reliably self-assess as Ready across multiple courses. Pattern confirmed in both andamio-for-contributors and nostr-relay-operations."
-    - "For Developer Documentation SLTs with API endpoints or transaction paths, audit lessons against actual codebase BEFORE compiling. These are high-confabulation zones — endpoints like '/api/v2/course/list' sound plausible but may be wrong. Template codebase access is necessary but not sufficient; explicit verification step catches errors."
-    - "Template/codebase access via file system can serve as context for Needs Context SLTs, converting 'fetch docs' into 'read existing code'. This worked for 7/10 Needs Context SLTs in api-developers course."
+    - "Exploration SLTs on well-documented protocols reliably self-assess as Ready across multiple courses. Pattern confirmed across different course types."
+    - "For Developer Documentation SLTs with API endpoints or transaction paths, audit lessons against actual codebase BEFORE compiling. These are high-confabulation zones — endpoints that sound plausible may be wrong. Codebase access is necessary but not sufficient; explicit verification step catches errors."
+    - "Template/codebase access via file system can serve as context for Needs Context SLTs, converting 'fetch docs' into 'read existing code'."
     - rule: "When source documentation has complete guide pages with screenshots, rate Ready with high confidence"
-      evidence: "8/8 Ready SLTs with complete docs succeeded"
-      courses_seen_in: ["andamio-for-project-owners"]
-      date: "2026-03-05"
+      evidence: "Ready SLTs with complete docs consistently succeed"
     - rule: "When source documentation is a stub, rate Needs Context — not Needs Human — if the concept is straightforward UI walkthrough"
-      evidence: "2/2 Needs Context SLTs resolved with screenshots alone, no expert needed"
-      courses_seen_in: ["andamio-for-project-owners"]
-      date: "2026-03-05"
+      evidence: "Needs Context SLTs resolved with screenshots alone, no expert needed"
     - rule: "Screenshot audit after lesson writing can upgrade Ready lessons — unused screenshots in adjacent directories often fill gaps not anticipated during readiness assessment"
-      evidence: "3 Ready lessons (2.1, 2.3, 3.1, 3.3) improved with screenshots discovered during audit"
-      courses_seen_in: ["andamio-for-project-owners"]
-      date: "2026-03-05"
+      evidence: "Multiple Ready lessons improved with screenshots discovered during audit"
