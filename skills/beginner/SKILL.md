@@ -2,6 +2,9 @@
 name: beginner
 description: Design a personalized learning experience about something new. Conversation-first, introduces concepts through examples.
 license: MIT
+metadata:
+  author: Andamio
+  version: 1.0.0
 ---
 
 # Pathway: Beginner

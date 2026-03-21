@@ -2,6 +2,9 @@
 name: apprentice
 description: Build a course from content you already have. Collaborative drafting, structures expertise into learning targets and lesson types.
 license: MIT
+metadata:
+  author: Andamio
+  version: 1.0.0
 ---
 
 # Pathway: Apprentice

@@ -2,6 +2,9 @@
 name: assess-slts
 description: Evaluate SLT quality across 5 dimensions with rewrite suggestions.
 license: MIT
+metadata:
+  author: Andamio
+  version: 1.0.0
 ---
 
 # Skill: Assess Student Learning Targets

@@ -2,6 +2,9 @@
 name: self-assess-readiness
 description: Assess your readiness to coach a learner through each SLT.
 license: MIT
+metadata:
+  author: Andamio
+  version: 1.0.0
 ---
 
 # Skill: Self-Assess Coaching Readiness

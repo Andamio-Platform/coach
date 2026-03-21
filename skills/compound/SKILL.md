@@ -2,6 +2,9 @@
 name: compound
 description: Capture and apply knowledge from course development to improve future runs.
 license: MIT
+metadata:
+  author: Andamio
+  version: 1.0.0
 ---
 
 # Skill: Compound Knowledge

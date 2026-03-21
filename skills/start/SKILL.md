@@ -2,6 +2,9 @@
 name: start
 description: Welcome to Coach. Choose your pathway — beginner, apprentice, or teacher — to start building a course.
 license: MIT
+metadata:
+  author: Andamio
+  version: 1.0.0
 ---
 
 # Welcome to Coach

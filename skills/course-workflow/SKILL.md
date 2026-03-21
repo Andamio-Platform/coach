@@ -2,6 +2,9 @@
 name: course-workflow
 description: Orchestrate course development workflow, track progress, and capture learnings.
 license: MIT
+metadata:
+  author: Andamio
+  version: 1.0.0
 ---
 
 # Skill: Course Workflow Orchestrator

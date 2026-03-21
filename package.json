@@ -1,0 +1,35 @@
+{
+  "name": "@andamio/coach",
+  "version": "1.0.0",
+  "description": "AI-assisted course development with compounding skills — SLTs, lesson types, Fist to Five readiness assessment",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Andamio-Platform/coach.git"
+  },
+  "homepage": "https://github.com/Andamio-Platform/coach",
+  "author": "Andamio <dev@andamio.io> (https://andamio.io)",
+  "keywords": [
+    "agent-skill",
+    "agent-skills",
+    "pi-package",
+    "pi-skill",
+    "course-development",
+    "slt",
+    "education",
+    "compounding-skills"
+  ],
+  "files": [
+    "skills/**",
+    "knowledge/**",
+    "research/**",
+    ".claude-plugin/**",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "pi": {
+    "skills": ["./skills"]
+  }
+}

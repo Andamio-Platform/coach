@@ -2,6 +2,9 @@
 name: classify-lesson-types
 description: Interview the user to classify each SLT by lesson type and build up lesson type heuristics.
 license: MIT
+metadata:
+  author: Andamio
+  version: 1.0.0
 ---
 
 # Skill: Classify Lesson Types

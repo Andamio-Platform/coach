@@ -2,6 +2,9 @@
 name: gather-code-examples
 description: Generate code example checklists for Developer Documentation lessons based on readiness assessment.
 license: MIT
+metadata:
+  author: Andamio
+  version: 1.0.0
 ---
 
 # Skill: Gather Code Examples

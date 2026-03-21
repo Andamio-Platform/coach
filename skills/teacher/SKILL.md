@@ -2,6 +2,9 @@
 name: teacher
 description: Fast-track course setup for someone with learning targets ready. Efficient workflow, batch assessment, minimal explanation.
 license: MIT
+metadata:
+  author: Andamio
+  version: 1.0.0
 ---
 
 # Pathway: Teacher

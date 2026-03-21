@@ -3,6 +3,9 @@ name: andamio-cli
 description: Use the Andamio CLI to manage courses, modules, and content. Import compiled modules, export for editing, check auth status, and query course data.
 license: MIT
 compatibility: Requires the Andamio CLI binary. See andamio.io for installation.
+metadata:
+  author: Andamio
+  version: 1.0.0
 ---
 
 # Skill: Andamio CLI

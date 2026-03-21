@@ -1,0 +1,21 @@
+{
+  "name": "coach",
+  "version": "1.0.0",
+  "description": "AI-assisted course development with compounding skills. Draft SLTs, assess quality, classify lesson types, evaluate readiness, build lessons, and compound knowledge.",
+  "author": {
+    "name": "Andamio",
+    "url": "https://andamio.io"
+  },
+  "homepage": "https://github.com/Andamio-Platform/coach",
+  "repository": "https://github.com/Andamio-Platform/coach",
+  "license": "MIT",
+  "keywords": [
+    "course-development",
+    "slt",
+    "lesson-design",
+    "compounding-skills",
+    "education",
+    "fist-to-five",
+    "andamio"
+  ]
+}

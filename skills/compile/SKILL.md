@@ -3,6 +3,9 @@ name: compile
 description: Compile a course module into the Andamio import format for publishing.
 license: MIT
 compatibility: Designed for Andamio platform import format. Adapt output format for other learning platforms.
+metadata:
+  author: Andamio
+  version: 1.0.0
 ---
 
 # Skill: Compile Module for Import

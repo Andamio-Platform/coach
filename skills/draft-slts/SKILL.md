@@ -2,6 +2,9 @@
 name: draft-slts
 description: Draft Student Learning Targets for a new course or module.
 license: MIT
+metadata:
+  author: Andamio
+  version: 1.0.0
 ---
 
 # Skill: Draft Student Learning Targets

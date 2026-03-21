@@ -2,6 +2,9 @@
 name: gather-screenshots
 description: Generate screenshot capture checklists for Product Demo lessons based on readiness assessment.
 license: MIT
+metadata:
+  author: Andamio
+  version: 1.0.0
 ---
 
 # Skill: Gather Screenshots
