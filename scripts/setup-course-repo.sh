@@ -36,25 +36,22 @@ echo "Setting up course repo with coach at: $LESSON_COACH"
 mkdir -p skills
 
 # Remove existing symlinks (in case of re-run)
-for skill in andamio-cli apprentice assess-slts beginner classify-lesson-types compile compound course-workflow draft-slts gather-code-examples gather-screenshots self-assess-readiness start teacher; do
+for skill in andamio-cli apprentice assess-slts beginner classify-lesson-types compile compound course-workflow draft-slts gather-code-examples gather-screenshots release self-assess-readiness start teacher; do
     rm -f "skills/$skill"
 done
 rm -f knowledge
-rm -f research
 
 # Symlink each skill
-for skill in andamio-cli apprentice assess-slts beginner classify-lesson-types compile compound course-workflow draft-slts gather-code-examples gather-screenshots self-assess-readiness start teacher; do
+for skill in andamio-cli apprentice assess-slts beginner classify-lesson-types compile compound course-workflow draft-slts gather-code-examples gather-screenshots release self-assess-readiness start teacher; do
     ln -s "$LESSON_COACH/skills/$skill" "skills/$skill"
     echo "  Linked skill: $skill"
 done
 
-# Symlink knowledge and research
+# Symlink knowledge (includes research/)
 ln -s "$LESSON_COACH/knowledge" knowledge
 echo "  Linked: knowledge/"
-ln -s "$LESSON_COACH/research" research
-echo "  Linked: research/"
 
 echo ""
-echo "Setup complete. 14 skills linked from coach."
+echo "Setup complete. 15 skills linked from coach."
 echo ""
 echo "Knowledge will compound back to: $LESSON_COACH/knowledge/"

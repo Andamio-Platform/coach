@@ -170,7 +170,7 @@ git submodule add https://github.com/Andamio-Platform/coach.git .coach
 ln -s .coach/skills .agents/skills
 ```
 
-Your agent discovers the skills automatically. Knowledge and research are available at `.coach/knowledge/` and `.coach/research/`.
+Your agent discovers the skills automatically. Knowledge and research are available at `.coach/knowledge/`.
 
 ### Option 4: Setup script
 
@@ -210,7 +210,7 @@ knowledge/
 
 ## Research Foundation
 
-The skills are grounded in education research. See `research/slt-research-report.md` for the full report on SLT definitions, Bloom's Taxonomy alignment, and formative assessment coupling.
+The skills are grounded in education research. See `knowledge/research/slt-research-report.md` for the full report on SLT definitions, Bloom's Taxonomy alignment, and formative assessment coupling.
 
 ## Adapting for Your Platform
 

@@ -19,8 +19,8 @@ Generates well-formed Student Learning Targets (SLTs) for a course or module bas
 
 Resolve file paths based on your execution context:
 
-- **Plugin context** (`${CLAUDE_PLUGIN_ROOT}` is set): Read knowledge from `${CLAUDE_PLUGIN_DATA}/knowledge/` (user data), falling back to `${CLAUDE_PLUGIN_ROOT}/knowledge/` (seed data). Read research from `${CLAUDE_PLUGIN_ROOT}/research/`.
-- **Clone/symlink context** (default): Read knowledge from `knowledge/` and research from `research/` relative to the project root.
+- **Plugin context** (`${CLAUDE_PLUGIN_ROOT}` is set): Read knowledge from `${CLAUDE_PLUGIN_DATA}/knowledge/` (user data), falling back to `${CLAUDE_PLUGIN_ROOT}/knowledge/` (seed data). Read research from `${CLAUDE_PLUGIN_ROOT}/knowledge/research/`.
+- **Clone/symlink context** (default): Read knowledge from `knowledge/` relative to the project root (research is at `knowledge/research/`).
 
 ### Pre-Execution Knowledge Check
 
@@ -52,7 +52,7 @@ The user will describe a course or module they want to create. Gather the follow
 4. **Module count**: How many modules? (Default: 3-4)
 5. **SLTs per module**: How many SLTs per module? (Default: 2-4)
 
-Always read `research/slt-research-report.md` for full research context before drafting.
+Always read `knowledge/research/slt-research-report.md` for full research context before drafting.
 
 ### The SLT Formula
 

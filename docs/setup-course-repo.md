@@ -26,15 +26,13 @@ $LESSON_COACH_PATH/scripts/setup-course-repo.sh
 
 ```
 lesson-coach/                    # Skills + knowledge source of truth
-├── skills/              # 14 agent skills
-├── knowledge/                   # Compounding knowledge base
-├── research/                    # SLT research and frameworks
+├── skills/                      # 15 agent skills
+├── knowledge/                   # Compounding knowledge base (includes research/)
 └── ...
 
 course-repo/                     # Standalone course content
-├── skills/ -> symlinks  # Points to lesson-coach skills
+├── skills/ -> symlinks          # Points to lesson-coach skills
 ├── knowledge/ -> symlink        # Points to lesson-coach knowledge
-├── research/ -> symlink         # Points to lesson-coach research
 ├── 00-course.md                 # Course metadata + outline
 ├── 01-slts.md                   # Working SLT file
 ├── 04-readiness-assessment.md   # Coaching readiness
@@ -50,8 +48,8 @@ The setup script lives at `scripts/setup-course-repo.sh` in the lesson-coach rep
 
 **What it does:**
 1. Creates `skills/` directory in the course repo
-2. Symlinks all 14 coach skills
-3. Symlinks `knowledge/` and `research/` directories
+2. Symlinks all 15 coach skills
+3. Symlinks `knowledge/` directory (includes research)
 
 **Re-running is safe** - it removes old symlinks before creating new ones.
 

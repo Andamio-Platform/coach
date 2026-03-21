@@ -18,8 +18,8 @@ Evaluates your readiness to coach a learner through each Student Learning Target
 
 Resolve file paths based on your execution context:
 
-- **Plugin context** (`${CLAUDE_PLUGIN_ROOT}` is set): Read knowledge from `${CLAUDE_PLUGIN_DATA}/knowledge/` (user data), falling back to `${CLAUDE_PLUGIN_ROOT}/knowledge/` (seed data). Read research from `${CLAUDE_PLUGIN_ROOT}/research/`.
-- **Clone/symlink context** (default): Read knowledge from `knowledge/` and research from `research/` relative to the project root.
+- **Plugin context** (`${CLAUDE_PLUGIN_ROOT}` is set): Read knowledge from `${CLAUDE_PLUGIN_DATA}/knowledge/` (user data), falling back to `${CLAUDE_PLUGIN_ROOT}/knowledge/` (seed data). Read research from `${CLAUDE_PLUGIN_ROOT}/knowledge/research/`.
+- **Clone/symlink context** (default): Read knowledge from `knowledge/` relative to the project root (research is at `knowledge/research/`).
 
 ### Pre-Execution Knowledge Check
 
@@ -47,7 +47,7 @@ Before assessing readiness, read the knowledge base for calibration data that sh
 
 ---
 
-The user will provide a markdown file containing a list of SLTs. Read the file, then assess your readiness to coach each SLT against the dimensions below. Always read `research/slt-research-report.md` for full research context before running the assessment.
+The user will provide a markdown file containing a list of SLTs. Read the file, then assess your readiness to coach each SLT against the dimensions below. Always read `knowledge/research/slt-research-report.md` for full research context before running the assessment.
 
 ### Honesty Calibration
 

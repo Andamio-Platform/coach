@@ -11,7 +11,7 @@ This is **not a code project**. Course content lives in separate repos that syml
 ## Directory Structure
 
 ```
-skills/                   # Agent skill definitions (14 skills, Agent Skills standard)
+skills/                   # Agent skill definitions (15 skills, Agent Skills standard)
   start/                  # Entry point — welcome and pathway selection
   beginner/               # Guided pathway for new course creators
   apprentice/             # Collaborative pathway for content experts
@@ -26,6 +26,7 @@ skills/                   # Agent skill definitions (14 skills, Agent Skills sta
   compound/               # Extracts patterns to improve future runs
   compile/                # Packages modules into Andamio import format
   andamio-cli/            # Import/export content via Andamio CLI
+  release/                # Publishes new versions across all channels
 knowledge/                # Compound knowledge base (YAML files)
   index.yaml              # Master index and aggregate stats
   voice-patterns.md       # Prose style guide for lesson writing
@@ -34,8 +35,8 @@ knowledge/                # Compound knowledge base (YAML files)
   lesson-types/           # Heuristics and edge cases
   lesson-writing/         # Style anti-patterns and acceptable patterns
   compile/                # Import gotchas discovered during platform uploads
+  research/               # SLT research report
 docs/                     # Framework and product documentation
-research/                 # SLT research report
 scripts/                  # Setup script for course repos
 ```
 

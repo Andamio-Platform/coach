@@ -27,7 +27,6 @@
   "files": [
     "skills/**",
     "knowledge/**",
-    "research/**",
     ".claude-plugin/**",
     "AGENTS.md",
     "CLAUDE.md",

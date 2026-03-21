@@ -59,7 +59,7 @@ If your platform doesn't have a CLI:
 
 If your platform uses different terminology:
 - Update the SLT format in AGENTS.md (currently "I can..." phrasing)
-- Adjust `research/slt-research-report.md` if your learning outcomes follow a different framework
+- Adjust `knowledge/research/slt-research-report.md` if your learning outcomes follow a different framework
 - The verb bank in `knowledge/slt-patterns/verb-bank.yaml` uses Bloom's Taxonomy — adapt if your curriculum framework differs
 
 ### 5. Add New Lesson Types (Optional)
