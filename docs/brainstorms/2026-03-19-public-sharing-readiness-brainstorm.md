@@ -42,7 +42,7 @@ The repo already has the concrete implementation. Rather than abstracting away t
 
 | # | Issue | Files | Fix |
 |---|-------|-------|-----|
-| 6 | Personal `~/projects/` paths in CLAUDE.md | `CLAUDE.md` lines 100-101 | Replace with generic example paths |
+| 6 | Personal `$REPOS/` paths in CLAUDE.md | `CLAUDE.md` lines 100-101 | Replace with generic example paths |
 | 7 | Personal paths in docs | `setup-course-repo.md`, `plans/*.md` | Clean up or frame as examples |
 | 8 | CLI source path in andamio-cli skill | `andamio-cli/SKILL.md` line 13 | Make generic |
 | 9 | "from James" in voice-patterns.md | `voice-patterns.md` line 95 | Remove name |
