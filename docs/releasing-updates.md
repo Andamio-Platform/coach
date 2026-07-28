@@ -67,7 +67,7 @@ This pulls the latest from `Andamio-Platform/coach` main branch. Users get the n
 Update the version in the marketplace entry:
 
 ```bash
-cd ~/projects/01-projects/andamio-marketplace
+cd $REPOS/andamio-marketplace
 ```
 
 Edit `.claude-plugin/marketplace.json` — change the coach plugin's `"version"` to the new version:

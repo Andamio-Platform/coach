@@ -69,7 +69,7 @@ This classification should be visible in the README skills table.
 - [x] Untrack `.obsidian/` directory — already untracked, `.gitignore` covers it
 - [x] Fix `.gitignore` to use `**/.DS_Store` pattern and remove tracked `.DS_Store` files
 - [x] Add MIT LICENSE file
-- [x] Remove personal `~/projects/...` paths from `CLAUDE.md` lines 99-101
+- [x] Remove personal `$REPOS/...` paths from `CLAUDE.md` lines 99-101
 - [x] Remove "Stale References in Skills (Fixed)" section from `CLAUDE.md`
 - [x] Clean personal CLI source path from `andamio-cli/SKILL.md` line 13
 - [x] Remove "from James" attribution in `knowledge/voice-patterns.md` line 95

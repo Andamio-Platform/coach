@@ -113,10 +113,10 @@ git push origin vX.Y.Z
 
 **6b. Claude Code Marketplace**
 
-Read `~/projects/01-projects/andamio-marketplace/.claude-plugin/marketplace.json`. Update the coach plugin's `"version"` field to the new version. Commit and push:
+Read `$REPOS/andamio-marketplace/.claude-plugin/marketplace.json`. Update the coach plugin's `"version"` field to the new version. Commit and push:
 
 ```bash
-cd ~/projects/01-projects/andamio-marketplace
+cd $REPOS/andamio-marketplace
 git add .
 git commit -m "chore: bump coach to vX.Y.Z"
 git push origin main
@@ -125,7 +125,7 @@ git push origin main
 **6c. npm**
 
 ```bash
-cd ~/projects/01-projects/coach
+cd $REPOS/coach
 npm publish --access public
 ```
 
